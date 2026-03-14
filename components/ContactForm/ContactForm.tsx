@@ -55,7 +55,7 @@ export default function ContactForm({ type = "general" }: Props) {
 
     try {
 
-      const response = await fetch("https://tudominio.com/send-email.php", {
+      const response = await fetch("https://jyleventos.com.co/send-email.php", {
         method: "POST",
         body: formData,
       });
