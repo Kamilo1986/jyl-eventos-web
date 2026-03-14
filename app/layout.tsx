@@ -6,6 +6,9 @@ import WhatsAppButton from "../components/WhatsAppButton/WhatsAppButton";
 export const metadata = {
   title: "J&L Eventos Premium",
   description: "Alquiler de menaje y decoración premium en Bogotá",
+  verification: {
+    google: "_YJU5u8S2-YVRwowyMM6SrozDGgcJ191_IEy20o-vE4"
+  }
 };
 
 export default function RootLayout({
