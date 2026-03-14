@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     port: 465,
     secure: true,
     auth: {
-      user: "tucorreo@tudominio.com",
+      user: "jyleventos.com.co",
       pass: "TU_PASSWORD"
     }
   })
