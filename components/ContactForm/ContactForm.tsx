@@ -55,41 +55,40 @@ export default function ContactForm({ type = "general" }: Props) {
 
     try {
 
-      const response = await fetch("https://jyleventos.com.co/send-email.php", {
-        method: "POST",
-        body: formData,
-      });
+const response = await fetch("/api/contact", {
+  method: "POST",
+  body: formData,
+});
 
-      const result = await response.text();
+const result = await response.json();
 
-      if (result === "OK") {
+if (result.success) {
 
-        /* GOOGLE ADS CONVERSION */
-        if (typeof window !== "undefined" && (window as any).gtag) {
-          (window as any).gtag("event", "conversion", {
-            send_to: "AW-XXXXXXXXX/XXXXXXXX"
-          });
-        }
+  /* GOOGLE ADS CONVERSION */
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag("event", "conversion", {
+      send_to: "AW-XXXXXXXXX/XXXXXXXX"
+    });
+  }
 
-        setSuccess(true);
-        form.reset();
+  setSuccess(true);
+  form.reset();
 
-      } else {
+} else {
 
-        alert("Error enviando la solicitud. Intenta nuevamente.");
+  alert("Error enviando la solicitud. Intenta nuevamente.");
 
-      }
+}
 
-    } catch (error) {
+} catch (error) {
 
-      alert("Error de conexión. Intenta nuevamente.");
+  alert("Error de conexión. Intenta nuevamente.");
 
-    }
+}
 
-    setLoading(false);
+setLoading(false);
 
-  };
-
+};
   return (
     <section className="contact-section">
       <div className="contact-container">
