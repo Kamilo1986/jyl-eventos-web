@@ -1,0 +1,96 @@
+.catalog {
+  padding: 60px 20px;
+  background: #0f172a;
+  color: white;
+  overflow: hidden;
+}
+
+.catalog-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.catalog-badge {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 6px 16px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+}
+
+.catalog h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.catalog p {
+  color: #94a3b8;
+  margin-bottom: 60px;
+}
+
+.carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.catalog-card {
+  min-width: 260px;
+  background: #020617;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.4s;
+  text-decoration: none;
+  color: white;
+  flex-shrink: 0;
+}
+
+.catalog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,.4);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.catalog-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.catalog-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  background: linear-gradient(90deg, #f97316, #a855f7);
+}
+
+.catalog-more {
+  margin-top: 60px;
+}
+
+.btn-more {
+  padding: 14px 30px;
+  border-radius: 40px;
+  background: linear-gradient(90deg,#06b6d4,#3b82f6);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
