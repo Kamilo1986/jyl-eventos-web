@@ -38,16 +38,17 @@ export default function ContactForm({ type = "general" }: Props) {
     eventLabel = "Evento de Decoración";
   }
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
     e.preventDefault();
 
-    const form = e.target;
+    const form = e.currentTarget;
 
-    /* ANTI SPAM HONEYPOT */
-    if (form.empresa.value !== "") {
-      return;
-    }
+    /* HONEYPOT ANTISPAM */
+
+    const empresa = (form.elements.namedItem("empresa") as HTMLInputElement).value;
+
+    if (empresa !== "") return;
 
     setLoading(true);
 
@@ -55,42 +56,44 @@ export default function ContactForm({ type = "general" }: Props) {
 
     try {
 
-const response = await fetch("/api/contact", {
-  method: "POST",
-  body: formData,
-});
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
 
-const result = await response.json();
+      const result = await response.json();
 
-if (result.success) {
+      if (result.success) {
 
-  /* GOOGLE ADS CONVERSION */
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", "conversion", {
-      send_to: "AW-XXXXXXXXX/XXXXXXXX"
-    });
-  }
+        /* GOOGLE ADS CONVERSION */
 
-  setSuccess(true);
-  form.reset();
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "conversion", {
+            send_to: "AW-XXXXXXXXX/XXXXXXXX",
+          });
+        }
 
-} else {
+        setSuccess(true);
+        form.reset();
 
-  alert("Error enviando la solicitud. Intenta nuevamente.");
+      } else {
 
-}
+        console.error("Error enviando formulario");
 
-} catch (error) {
+      }
 
-  alert("Error de conexión. Intenta nuevamente.");
+    } catch (error) {
 
-}
+      console.error("Error de conexión", error);
 
-setLoading(false);
+    }
 
-};
+    setLoading(false);
+  };
+
   return (
     <section className="contact-section">
+
       <div className="contact-container">
 
         <h2>{title}</h2>
@@ -98,33 +101,62 @@ setLoading(false);
         <p className="contact-description">{description}</p>
 
         {success && (
-          <div className="contact-success">
+          <div
+            className="contact-success"
+            role="alert"
+            aria-live="polite"
+          >
             ✔ Solicitud enviada correctamente. Te contactaremos pronto.
           </div>
         )}
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form
+          className="contact-form"
+          onSubmit={handleSubmit}
+          aria-label="Formulario de contacto para cotizar menaje"
+        >
 
-          {/* HONEYPOT ANTI SPAM */}
+          {/* HONEYPOT */}
+
           <input
             type="text"
             name="empresa"
             style={{ display: "none" }}
+            tabIndex={-1}
+            autoComplete="off"
           />
 
           <div className="form-group">
             <label htmlFor="nombre">Nombre completo</label>
-            <input type="text" id="nombre" name="nombre" required />
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              autoComplete="name"
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" required />
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              required
+              autoComplete="tel"
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autoComplete="email"
+            />
           </div>
 
           <div className="form-group">
@@ -142,6 +174,7 @@ setLoading(false);
             type="submit"
             className="contact-button"
             disabled={loading}
+            aria-busy={loading}
           >
             {loading ? "Enviando..." : "Enviar Solicitud de Cotización"}
           </button>
@@ -149,6 +182,7 @@ setLoading(false);
         </form>
 
       </div>
+
     </section>
   );
 }

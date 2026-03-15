@@ -6,14 +6,14 @@ import Image from "next/image";
 import "./Catalog.css";
 
 const products = [
-  { id: "cristaleria", name: "Cristalería Premium", image: "/images/catalog/cristaleriaa.jpg" },
-  { id: "cubiertos", name: "Cubiertos Elegantes", image: "/images/catalog/cubiertoss.jpg" },
-  { id: "vajilla", name: "Vajilla importada", image: "/images/catalog/vajilla.jpg" },
+  { id: "cristaleria-premium", name: "Cristalería Premium", image: "/images/catalog/cristaleriaa.jpg" },
+  { id: "cubiertos-elegantes", name: "Cubiertos Elegantes", image: "/images/catalog/cubiertoss.jpg" },
+  { id: "vajilla-importada", name: "Vajilla importada", image: "/images/catalog/vajilla.jpg" },
   { id: "platos-base", name: "Platos Base", image: "/images/catalog/platos-base.jpg" },
-  { id: "mesas", name: "Mesas para Eventos", image: "/images/catalog/mesass.jpg" },
-  { id: "sillas", name: "Sillas Elegantes", image: "/images/catalog/sillas.jpg" },
-  { id: "manteleria", name: "Mantelería Premium", image: "/images/catalog/manteleria.jpg" },
-  { id: "decoracion", name: "Decoración Exclusiva", image: "/images/catalog/decoracion.jpg" },
+  { id: "mesas-para-eventos", name: "Mesas para Eventos", image: "/images/catalog/mesass.jpg" },
+  { id: "sillas-elegantes", name: "Sillas Elegantes", image: "/images/catalog/sillas.jpg" },
+  { id: "manteleria-premium", name: "Mantelería Premium", image: "/images/catalog/manteleria.jpg" },
+  { id: "decoracion-exclusiva", name: "Decoración Exclusiva", image: "/images/catalog/decoracion.jpg" },
 ];
 
 export default function Catalog() {
