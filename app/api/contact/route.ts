@@ -13,21 +13,21 @@ export async function POST(req: Request) {
     const mensaje = data.get("mensaje")
 
     const transporter = nodemailer.createTransport({
-  host: "smtp.hostinger.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  },
-  tls: {
-    rejectUnauthorized: false
-  }
-})
+      host: "smtp.hostinger.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      },
+      tls: {
+        rejectUnauthorized: false
+      }
+    })
 
     await transporter.sendMail({
-      from: `"Formulario Web" <contacto@jyleventos.com.co>`,
-      to: "contacto@jyleventos.com.co",
+      from: `"Formulario Web" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
       subject: "Nueva cotización desde la web",
       text: `
 Nombre: ${nombre}
@@ -43,7 +43,7 @@ ${mensaje}
 
   } catch (error) {
 
-    console.error(error)
+    console.error("EMAIL ERROR:", error)
 
     return NextResponse.json(
       { success: false },
