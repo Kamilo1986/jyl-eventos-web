@@ -7,7 +7,6 @@
   text-align: center;
   color: white;
 
-  /* gradiente optimizado */
   background:
     radial-gradient(circle at top left, rgba(14,165,233,.25), transparent 45%),
     radial-gradient(circle at bottom right, rgba(147,51,234,.25), transparent 45%),
@@ -19,6 +18,8 @@
 .hero-content {
   max-width: 960px;
   padding: 0 16px;
+
+  animation: heroFade 1s ease forwards;
 }
 
 /* BADGE */
@@ -75,11 +76,12 @@
   color: white;
   text-decoration: none;
   font-weight: 600;
-  transition: transform .25s ease;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .btn-gradient:hover {
   transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
 }
 
 /* BOTON SECUNDARIO */
@@ -98,7 +100,9 @@
   color:white;
 }
 
-/* STATS */
+/* =========================
+   HERO STATS
+========================= */
 
 .hero-stats {
   display:flex;
@@ -108,12 +112,26 @@
   margin-bottom:30px;
 }
 
-.hero-stats h3{
+.hero-stats div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* NUMEROS */
+
+.hero-number{
   font-size:32px;
+  font-weight:700;
+
   background:linear-gradient(90deg,#06b6d4,#a855f7);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+
+  animation: fadeUp .8s ease forwards;
 }
+
+/* TEXTO */
 
 .hero-stats span{
   display:block;
@@ -122,7 +140,41 @@
   font-size:14px;
 }
 
-/* RESPONSIVE */
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes heroFade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(10px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width:768px){
 
@@ -136,34 +188,32 @@
   gap:30px;
 }
 
-}
-/* ================================
-   BOTONES MOBILE
-================================ */
-
-@media (max-width:768px){
+/* BOTONES MOBILE */
 
 .hero-buttons{
-flex-direction:column;
-align-items:center;
-gap:14px;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
 }
 
 .btn-gradient,
 .btn-outline{
 
-width:100%;
-max-width:320px;
+  width:100%;
+  max-width:320px;
 
-padding:14px 20px;
+  padding:14px 20px;
 
-font-size:15px;
+  font-size:15px;
 
-text-align:center;
+  text-align:center;
+
+}
 
 }
 
-}
+/* CTA PRINCIPAL DESTACADO */
+
 .hero-buttons a:first-child{
-font-weight:700;
+  font-weight:700;
 }

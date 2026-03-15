@@ -69,7 +69,7 @@ export default function Gallery({ images, productName }: Props) {
                 sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
                 className="galeria-img"
                 priority={i === 0}
-                quality={80}
+                quality={70}
                 placeholder="empty"
               />
 

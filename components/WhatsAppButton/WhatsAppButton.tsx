@@ -31,13 +31,13 @@ export default function WhatsAppButton() {
   return (
 
     <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="whatsapp-wrapper"
-      aria-label="Cotizar por WhatsApp"
-      title="Cotiza por WhatsApp"
-    >
+href={url}
+target="_blank"
+rel="noopener noreferrer"
+className="whatsapp-wrapper"
+aria-label="Abrir WhatsApp para cotizar menaje en Bogotá"
+title="Cotizar por WhatsApp"
+>
 
       {/* TEXTO DESPLEGABLE */}
 
