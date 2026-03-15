@@ -13,7 +13,7 @@ html, body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  padding: 6px 0; /* más compacto */
+  padding: 12px 0; /* más compacto */
   transition: all 0.3s ease;
   background: rgba(5, 10, 25, 0.7);
   backdrop-filter: blur(10px);
@@ -22,6 +22,9 @@ html, body {
 
 #navbar.scrolled {
   background: rgba(5, 10, 25, 0.95);
+}
+#navbar.scrolled .logo img{
+width:100px;
 }
 
 /* ================================
@@ -50,16 +53,20 @@ html, body {
 }
 
 .logo img {
-  width: 116px;
+
+  width: 160px;
   height: auto;
+
   object-fit: contain;
+
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6))
           contrast(1.1)
           brightness(1.05);
+
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
               filter 0.4s ease;
-}
 
+}
 .logo:hover img {
   transform: scale(1.18); /* 🔥 más pronunciado */
   filter: drop-shadow(0 10px 28px rgba(19, 2, 147, 0.45))
@@ -200,4 +207,11 @@ html, body {
   .hamburger {
     display: flex;
   }
+}
+@media (max-width:768px){
+
+.logo img{
+width:110px;
+}
+
 }

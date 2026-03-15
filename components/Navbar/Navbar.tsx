@@ -73,9 +73,10 @@ export default function Navbar() {
           <Image
             src="/logojyl29.png"
             alt="J&L Eventos Premium - Alquiler de menaje y decoración para eventos en Bogotá"
-            width={116}
-            height={60}
+            width={200}
+            height={200}
             priority
+            sizes="(max-width: 768px) 70px, 120px"
           />
         </Link>
 
