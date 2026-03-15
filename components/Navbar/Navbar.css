@@ -50,7 +50,7 @@ html, body {
 }
 
 .logo img {
-  width: 115px;
+  width: 130px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6))
