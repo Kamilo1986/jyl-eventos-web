@@ -109,6 +109,8 @@ export default function CatalogPage() {
                   src={`/images/${product.slug}/1.jpg`}
                   alt={product.name}
                   fill
+                  quality={60}
+                  sizes="(max-width:768px) 100vw, 400px"
                   className="catalog-img"
                   style={{ objectFit: "cover" }}
                 />

@@ -49,7 +49,7 @@ export default function MenajeLanding() {
           fill
           priority
           sizes="100vw"
-          quality={85}
+          quality={60}
           className={styles.heroImage}
         />
 

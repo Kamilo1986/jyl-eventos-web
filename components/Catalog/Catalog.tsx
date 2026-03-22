@@ -67,6 +67,7 @@ export default function Catalog() {
                   src={product.image}
                   alt={`Alquiler de ${product.name} en Bogotá`}
                   fill
+                  quality={60}
                   sizes="(max-width: 768px) 100vw, 300px"
                   style={{ objectFit: "cover" }}
                 />

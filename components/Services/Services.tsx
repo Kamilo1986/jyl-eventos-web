@@ -75,6 +75,7 @@ export default function Services() {
                   src={service.image}
                   alt={service.title}
                   fill
+                  quality={60}
                   sizes="(max-width:768px) 100vw, 400px"
                   style={{ objectFit: "cover" }}
                 />
