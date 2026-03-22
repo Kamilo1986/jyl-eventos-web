@@ -2,6 +2,13 @@
   "name": "jl-eventos-premium",
   "version": "0.1.0",
   "private": true,
+
+  "browserslist": [
+    "defaults and supports es6-module",
+    "not dead",
+    "not ie 11"
+  ],
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",

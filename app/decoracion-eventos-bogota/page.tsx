@@ -43,6 +43,7 @@ export default function DecoracionLanding() {
           src="/images/backgrounds/decoracion-bg.jpg"
           alt="Decoración de eventos premium en Bogotá"
           fill
+          quality={60}
           priority
           sizes="100vw"
           className={styles.heroImage}

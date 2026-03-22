@@ -1,6 +1,6 @@
 "use client";
 
-import "./Hero.css";
+import styles from "./Hero.module.css";
 import { useEffect, useState, useRef } from "react";
 
 export default function Hero() {
@@ -71,11 +71,11 @@ export default function Hero() {
 
   return (
 
-    <section id="inicio" className="hero">
+    <section id="inicio" className={styles.hero}>
 
-      <div className="hero-content" ref={heroRef}>
+      <div className={styles["hero-content"]} ref={heroRef}>
 
-        <span className="hero-badge">
+        <span className={styles["hero-badge"]}>
           Servicio profesional para eventos corporativos y sociales
         </span>
 
@@ -92,15 +92,11 @@ export default function Hero() {
           y asesoría personalizada.
         </p>
 
-        {/* BOTONES */}
-
-        <div className="hero-buttons">
+        <div className={styles["hero-buttons"]}>
 
           <a
             href="/alquiler-menaje-bogota#formulario-general"
-            aria-label="Ir al formulario para cotizar alquiler de menaje en Bogotá"
-            title="Cotizar alquiler de menaje premium en Bogotá"
-            className="btn-gradient"
+            className={styles["btn-gradient"]}
           >
             Cotizar alquiler de menaje en Bogotá
           </a>
@@ -109,30 +105,27 @@ export default function Hero() {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline"
-            aria-label="Cotizar alquiler de menaje por WhatsApp"
+            className={styles["btn-outline"]}
           >
             Cotizar por WhatsApp
           </a>
 
         </div>
 
-        {/* ESTADISTICAS */}
-
-        <div className="hero-stats">
+        <div className={styles["hero-stats"]}>
 
           <div>
-            <p className="hero-number">{events}+</p>
+            <p className={styles["hero-number"]}>{events}+</p>
             <span>Eventos realizados en Bogotá</span>
           </div>
 
           <div>
-            <p className="hero-number">{products}+</p>
+            <p className={styles["hero-number"]}>{products}+</p>
             <span>Productos premium disponibles</span>
           </div>
 
           <div>
-            <p className="hero-number">{clients}%</p>
+            <p className={styles["hero-number"]}>{clients}%</p>
             <span>Clientes satisfechos</span>
           </div>
 
