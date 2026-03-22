@@ -72,13 +72,13 @@ export default function Services() {
             >
               <div className="service-image">
                 <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  quality={60}
-                  sizes="(max-width:768px) 100vw, 400px"
-                  style={{ objectFit: "cover" }}
-                />
+  src={service.image}
+  alt={service.title}
+  fill
+  quality={60}
+  sizes="(max-width:768px) 100vw, 400px"
+  className="service-img"
+/>
               </div>
 
               <div className="service-content">

@@ -1,31 +1,39 @@
 import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://tusitio.com";
+export default function sitemap() {
+  const baseUrl = "https://jyleventos.com.co";
 
-  const products = [
-    "vino-tinto",
-    "champagne",
-    "martini",
-    "coctel",
-    "whisky",
-    "agua",
-    "vajilla",
-    "plato-base",
-    "cubiertos",
-    "mesas",
+  // páginas principales
+  const routes = [
+    "",
+    "/alquiler-menaje-bogota",
+    "/catalogo",
+    "/decoracion-eventos-bogota",
+    "/menaje-eventos-corporativos-bogota",
+    "/menaje-eventos-sociales-bogota",
   ];
 
-  const productUrls = products.map((slug) => ({
-    url: `${baseUrl}/galeria/${slug}`,
+  const staticUrls = routes.map((route) => ({
+    url: `${baseUrl}${route}`,
     lastModified: new Date(),
   }));
 
-  return [
-    {
-      url: `${baseUrl}`,
-      lastModified: new Date(),
-    },
-    ...productUrls,
+  // slugs reales de la galería
+  const gallerySlugs = [
+    "cristaleria-premium",
+    "cubiertos-elegantes",
+    "decoracion-exclusiva",
+    "manteleria-premium",
+    "mesas-para-eventos",
+    "platos-base",
+    "sillas-elegantes",
+    "vajilla-importada",
   ];
+
+  const dynamicUrls = gallerySlugs.map((slug) => ({
+    url: `${baseUrl}/Galeria/${slug}`,
+    lastModified: new Date(),
+  }));
+
+  return [...staticUrls, ...dynamicUrls];
 }

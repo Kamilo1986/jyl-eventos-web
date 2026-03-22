@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://tusitio.com/sitemap.xml",
+    sitemap: "https://jyleventos.com.co/sitemap.xml",
   };
 }
