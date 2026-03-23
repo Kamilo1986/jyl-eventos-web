@@ -3,7 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Lightbox from "yet-another-react-lightbox";
+import dynamic from "next/dynamic";
+
+// 🔥 SOLO el componente se carga dinámico
+const Lightbox = dynamic(
+  () => import("yet-another-react-lightbox"),
+  { ssr: false }
+);
+
+// ✅ el plugin se importa normal (NO dynamic)
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 import "yet-another-react-lightbox/styles.css";
@@ -69,8 +77,7 @@ export default function Gallery({ images, productName }: Props) {
                 sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
                 className="galeria-img"
                 priority={i === 0}
-                quality={70}
-                placeholder="empty"
+                quality={60}
               />
 
             </div>
