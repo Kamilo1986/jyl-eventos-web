@@ -71,6 +71,48 @@ export default function DecoracionLanding() {
           </a>
         </div>
       </section>
+      {/* 🔥 SECCIÓN VISUAL DECORACIÓN */}
+<section className={styles.visualSection}>
+  <div className={styles.visualContainer}>
+
+    <div className={styles.visualImages}>
+
+      <Image
+        src="/images/decoracion-exclusiva/1.jpg"
+        alt="Decoración elegante para eventos en Bogotá"
+        width={500}
+        height={350}
+        quality={60}
+      />
+
+      <Image
+        src="/images/decoracion-exclusiva/2.jpg"
+        alt="Montaje decorativo premium"
+        width={500}
+        height={350}
+        quality={60}
+      />
+
+      <Image
+        src="/images/decoracion-exclusiva/3.jpg"
+        alt="Decoración sofisticada para eventos"
+        width={500}
+        height={350}
+        quality={60}
+      />
+
+    </div>
+
+    <div className={styles.visualText}>
+      <h2>Diseño que transforma espacios</h2>
+      <p>
+        Creamos ambientes exclusivos con decoración premium para eventos en Bogotá,
+        cuidando cada detalle para generar experiencias memorables.
+      </p>
+    </div>
+
+  </div>
+</section>
 
       {/* CONTENIDO */}
       <section className={styles.content}>

@@ -19,7 +19,6 @@ export const metadata: Metadata = {
 };
 
 export default function MenajeLanding() {
-
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -40,9 +39,7 @@ export default function MenajeLanding() {
   return (
     <>
       {/* HERO */}
-
       <section className={styles.hero}>
-
         <Image
           src="/images/backgrounds/menajee-bg.jpg"
           alt="Alquiler de menaje premium en Bogotá para eventos corporativos y sociales"
@@ -56,9 +53,6 @@ export default function MenajeLanding() {
         <div className={styles.overlay} />
 
         <div className={styles.heroContent}>
-
-          {/* SEO Schema */}
-
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -86,18 +80,58 @@ export default function MenajeLanding() {
           >
             Cotizar alquiler de menaje en Bogotá
           </a>
-
         </div>
-
       </section>
 
+      {/* 🔥 SECCIÓN VISUAL PREMIUM (NUEVA) */}
+      <section className={styles.visualSection}>
+  <div className={styles.visualContainer}>
+
+    <div className={styles.visualImages}>
+
+  <Image
+    src="/images/visual/1.jpg"
+    alt="Decoración elegante con menaje premium en Bogotá"
+    width={500}
+    height={350}
+    quality={60}
+    sizes="(max-width:768px) 100vw, 50vw"
+  />
+
+  <Image
+    src="/images/visual/2.jpg"
+    alt="Montaje de mesa con vajilla premium para eventos en Bogotá"
+    width={500}
+    height={350}
+    quality={60}
+    sizes="(max-width:768px) 100vw, 50vw"
+  />
+
+  <Image
+    src="/images/visual/decoracion-evento.jpg"
+    alt="Menaje premium para eventos en Bogotá"
+    width={500}
+    height={350}
+    quality={60}
+    sizes="(max-width:768px) 100vw, 50vw"
+  />
+
+</div>
+
+    <div className={styles.visualText}>
+      <h2>Experiencias elegantes y memorables</h2>
+      <p>
+        Diseñamos montajes exclusivos con menaje premium para crear eventos
+        únicos en Bogotá.
+      </p>
+    </div>
+
+  </div>
+</section>
 
       {/* CONTENIDO */}
-
       <section className={styles.content}>
-
         <div className={styles.container}>
-
           <h2>Menaje para Eventos Corporativos en Bogotá</h2>
 
           <p>
@@ -131,18 +165,14 @@ export default function MenajeLanding() {
             Salitre, Suba, Centro y municipios cercanos. Somos especialistas en
             alquiler de menaje para eventos en Bogotá.
           </p>
-
         </div>
-
       </section>
 
 
       {/* FORMULARIO */}
-
       <section id="formulario-general">
         <ContactForm type="general" />
       </section>
-
     </>
   );
 }

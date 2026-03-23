@@ -45,6 +45,7 @@ export default function SocialesLanding() {
           fill
           priority
           sizes="100vw"
+          quality={60}
           className={styles.heroImage}
         />
 
@@ -71,6 +72,49 @@ export default function SocialesLanding() {
           <a href="#formulario-social" className={styles.cta}>
             Cotizar alquiler de menaje en Bogotá
           </a>
+        </div>
+      </section>
+
+      {/* 🔥 SECCIÓN VISUAL PREMIUM */}
+      <section className={styles.visualSection}>
+        <div className={styles.visualContainer}>
+
+          <div className={styles.visualImages}>
+
+            <Image
+              src="/images/disponible2/1.jpg"
+              alt="Decoración elegante para eventos sociales en Bogotá"
+              width={400}
+              height={300}
+              quality={60}
+            />
+
+            <Image
+              src="/images/disponible2/2.jpg"
+              alt="Montaje de mesa premium para celebraciones"
+              width={400}
+              height={300}
+              quality={60}
+            />
+
+            <Image
+              src="/images/disponible2/3.jpg"
+              alt="Menaje sofisticado para eventos sociales"
+              width={400}
+              height={300}
+              quality={60}
+            />
+
+          </div>
+
+          <div className={styles.visualText}>
+            <h2>Celebraciones con Estilo y Elegancia</h2>
+            <p>
+              Creamos experiencias únicas con decoración y menaje premium
+              para eventos sociales en Bogotá que dejan una impresión inolvidable.
+            </p>
+          </div>
+
         </div>
       </section>
 

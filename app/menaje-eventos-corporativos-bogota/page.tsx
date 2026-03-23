@@ -55,6 +55,7 @@ export default function CorporativoLanding() {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
+          
 
           <h1>
             Alquiler de Menaje para Eventos Corporativos en Bogotá
@@ -72,6 +73,48 @@ export default function CorporativoLanding() {
           </a>
         </div>
       </section>
+      {/* 🔥 SECCIÓN VISUAL CORPORATIVA */}
+<section className={styles.visualSection}>
+  <div className={styles.visualContainer}>
+
+    <div className={styles.visualImages}>
+
+      <Image
+        src="/images/backgrounds/corporativo-bgg.jpg"
+        alt="Evento corporativo elegante en Bogotá"
+        width={500}
+        height={350}
+        quality={60}
+      />
+
+      <Image
+        src="/images/backgrounds/decoracion-bg.jpg"
+        alt="Decoración para eventos empresariales"
+        width={500}
+        height={350}
+        quality={60}
+      />
+
+      <Image
+        src="/images/backgrounds/menajee-bg.jpg"
+        alt="Menaje premium para eventos corporativos"
+        width={500}
+        height={350}
+        quality={60}
+      />
+
+    </div>
+
+    <div className={styles.visualText}>
+      <h2>Eventos Corporativos con Impacto Profesional</h2>
+      <p>
+        Creamos experiencias empresariales elegantes con menaje premium,
+        cuidando cada detalle para proyectar una imagen profesional y de alto nivel.
+      </p>
+    </div>
+
+  </div>
+</section>
 
       {/* CONTENIDO */}
       <section className={styles.content}>
