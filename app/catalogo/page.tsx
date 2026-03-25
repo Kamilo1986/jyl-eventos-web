@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
-import "./catalogo.css";
-
 export const metadata: Metadata = {
   title: "Catálogo de Menaje y Cristalería en Bogotá",
   description:
