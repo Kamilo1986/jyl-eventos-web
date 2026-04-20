@@ -12,7 +12,7 @@ export default function Footer() {
           <h3>J&L Eventos Premium</h3>
           <p>
             Especialistas en alquiler de menaje y decoración
-            para eventos en Bogotá  corporativos y sociales.
+            para eventos en Bogotá  corporativos y sociales..
           </p>
         </div>
 
