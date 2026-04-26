@@ -33,13 +33,14 @@ export default function CateringLanding() {
       <section className={styles.hero}>
 
         <Image
-          src="/images/backgrounds/catering-bg.jpg"
-          alt="Servicio de catering en Bogotá"
-          fill
-          priority
-          className={styles.heroImage}
-        />
-
+  src="/images/backgrounds/catering-bg.jpg"
+  alt="Catering en Bogotá"
+  fill
+  priority
+  quality={70}
+  sizes="100vw"
+  style={{ objectFit: "cover" }}
+/>
         <div className={styles.overlay} />
 
         <div className={styles.heroContent}>
@@ -69,11 +70,37 @@ export default function CateringLanding() {
 
         <div className={styles.visualContainer}>
 
-          <div className={styles.visualImages}>
-            <Image src="/images/catering/1.2.jpg" alt="" width={300} height={200} />
-            <Image src="/images/catering/2.1.jpg" alt="" width={300} height={200} />
-            <Image src="/images/catering/3.1.jpg" alt="" width={300} height={200} />
-          </div>
+         <div className={styles.visualImages}>
+  <Image
+    src="/images/catering/1.2.jpg"
+    alt="Estación de café para eventos"
+    width={300}
+    height={200}
+    quality={60}
+    loading="lazy"
+    sizes="(max-width: 768px) 100vw, 300px"
+  />
+
+  <Image
+    src="/images/catering/2.1.jpg"
+    alt="Refrigerios empresariales en Bogotá"
+    width={300}
+    height={200}
+    quality={60}
+    loading="lazy"
+    sizes="(max-width: 768px) 100vw, 300px"
+  />
+
+  <Image
+    src="/images/catering/3.1.jpg"
+    alt="Bebidas y catering para eventos"
+    width={300}
+    height={200}
+    quality={60}
+    loading="lazy"
+    sizes="(max-width: 768px) 100vw, 300px"
+  />
+</div>
 
           <div className={styles.visualText}>
             <h2>Experiencias gastronómicas</h2>
