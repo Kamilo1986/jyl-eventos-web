@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import "./ContactForm.css";
+import styles from "./ContactForm.module.css";
 
 type Props = {
-  type?: "general" | "corporativo" | "social" | "decoracion";
+  type?: "general" | "corporativo" | "social" | "decoracion"| "catering";
 };
 
 export default function ContactForm({ type = "general" }: Props) {
@@ -92,97 +92,63 @@ export default function ContactForm({ type = "general" }: Props) {
   };
 
   return (
-    <section className="contact-section">
+    <section className={styles.contactSection}>
 
-      <div className="contact-container">
+  <div className={styles.contactContainer}>
 
-        <h2>{title}</h2>
+    <h2>{title}</h2>
 
-        <p className="contact-description">{description}</p>
+    <p className={styles.contactDescription}>{description}</p>
 
-        {success && (
-          <div
-            className="contact-success"
-            role="alert"
-            aria-live="polite"
-          >
-            ✔ Solicitud enviada correctamente. Te contactaremos pronto.
-          </div>
-        )}
+    {success && (
+      <div className={styles.contactSuccess}>
+        ✔ Solicitud enviada correctamente. Te contactaremos pronto.
+      </div>
+    )}
 
-        <form
-          className="contact-form"
-          onSubmit={handleSubmit}
-          aria-label="Formulario de contacto para cotizar menaje"
-        >
+    <form
+      className={styles.contactForm}
+      onSubmit={handleSubmit}
+    >
 
-          {/* HONEYPOT */}
+      <input
+        type="text"
+        name="empresa"
+        style={{ display: "none" }}
+      />
 
-          <input
-            type="text"
-            name="empresa"
-            style={{ display: "none" }}
-            tabIndex={-1}
-            autoComplete="off"
-          />
-
-          <div className="form-group">
-            <label htmlFor="nombre">Nombre completo</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              required
-              autoComplete="name"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="telefono">Teléfono</label>
-            <input
-              type="tel"
-              id="telefono"
-              name="telefono"
-              required
-              autoComplete="tel"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="email">Correo electrónico</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              autoComplete="email"
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="mensaje">Detalles del {eventLabel}</label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              rows={4}
-              placeholder="Fecha, cantidad de invitados y tipo de menaje requerido..."
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="contact-button"
-            disabled={loading}
-            aria-busy={loading}
-          >
-            {loading ? "Enviando..." : "Enviar Solicitud de Cotización"}
-          </button>
-
-        </form>
-
+      <div className={styles.formGroup}>
+        <label htmlFor="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required />
       </div>
 
-    </section>
+      <div className={styles.formGroup}>
+        <label htmlFor="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required />
+      </div>
+
+      <div className={styles.formGroup}>
+        <label htmlFor="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div className={styles.formGroup}>
+        <label htmlFor="mensaje">Detalles del {eventLabel}</label>
+        <textarea id="mensaje" name="mensaje" rows={4} required />
+      </div>
+
+      <button
+        type="submit"
+        className={styles.contactButton}
+        disabled={loading}
+      >
+        {loading ? "Enviando..." : "Enviar Solicitud"}
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
   );
 }

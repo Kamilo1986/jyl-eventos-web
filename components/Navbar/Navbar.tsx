@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import "./Navbar.css";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
 
@@ -11,7 +11,6 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   /* OPTIMIZACIÓN SCROLL */
-
   useEffect(() => {
 
     let ticking = false;
@@ -39,97 +38,74 @@ export default function Navbar() {
 
   }, []);
 
-
-  /* BLOQUEAR SCROLL CUANDO MENU MÓVIL ESTÁ ABIERTO */
-
+  /* BLOQUEAR SCROLL */
   useEffect(() => {
 
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
 
   }, [menuOpen]);
-
 
   return (
 
     <header
-      id="navbar"
-      className={scrolled ? "scrolled" : ""}
+      className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}
       role="banner"
     >
 
-      <div className="container navbar-container">
+      <div className={`container ${styles.navbarContainer}`}>
 
         {/* LOGO */}
-
         <Link
           href="/"
-          className="logo"
+          className={styles.logo}
           aria-label="Inicio - J&L Eventos Premium"
         >
           <Image
             src="/logojyl29.png"
-            alt="J&L Eventos Premium - Alquiler de menaje y decoración para eventos en Bogotá"
+            alt="J&L Eventos Premium"
             width={200}
             height={200}
             priority
-            sizes="(max-width: 768px) 70px, 120px"
           />
         </Link>
 
-
         {/* MENU */}
-
         <nav
-          className={`menu ${menuOpen ? "active" : ""}`}
+          className={`${styles.menu} ${menuOpen ? styles.active : ""}`}
           aria-label="Menú principal"
         >
 
           <Link href="/" onClick={() => setMenuOpen(false)}>Inicio</Link>
 
-          <Link
-            href="/alquiler-menaje-bogota"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link href="/alquiler-menaje-bogota" onClick={() => setMenuOpen(false)}>
             Menaje
           </Link>
 
-          <Link
-            href="/menaje-eventos-corporativos-bogota"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link href="/menaje-eventos-corporativos-bogota" onClick={() => setMenuOpen(false)}>
             Corporativos
           </Link>
 
-          <Link
-            href="/menaje-eventos-sociales-bogota"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link href="/menaje-eventos-sociales-bogota" onClick={() => setMenuOpen(false)}>
             Sociales
           </Link>
 
-          <Link
-            href="/decoracion-eventos-bogota"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link href="/decoracion-eventos-bogota" onClick={() => setMenuOpen(false)}>
             Decoración
           </Link>
 
-          <Link
-            href="/catalogo"
-            onClick={() => setMenuOpen(false)}
-          >
+          {/* 🔥 NUEVO */}
+          <Link href="/catering" onClick={() => setMenuOpen(false)}>
+            Catering
+          </Link>
+
+          <Link href="/catalogo" onClick={() => setMenuOpen(false)}>
             Catálogo
           </Link>
 
           {/* CTA MOVIL */}
-
           <a
             href="/alquiler-menaje-bogota#formulario-general"
-            className="btn-cotizar mobile-btn"
+            className={`${styles.btnCotizar} ${styles.mobileBtn}`}
             onClick={() => setMenuOpen(false)}
           >
             Cotiza Ahora
@@ -137,25 +113,19 @@ export default function Navbar() {
 
         </nav>
 
-
         {/* CTA DESKTOP */}
-
         <a
           href="/alquiler-menaje-bogota#formulario-general"
-          className="btn-cotizar desktop-btn"
+          className={`${styles.btnCotizar} ${styles.desktopBtn}`}
         >
           Cotiza Ahora
         </a>
 
-
         {/* HAMBURGUESA */}
-
         <button
-          className={`hamburger ${menuOpen ? "open" : ""}`}
+          className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Abrir menú de navegación"
-          aria-expanded={menuOpen}
-          aria-controls="menu"
+          aria-label="Abrir menú"
         >
           <span></span>
           <span></span>
