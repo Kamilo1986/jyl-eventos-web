@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
+import styles from "./page.module.css";
+
 export const metadata: Metadata = {
   title: "Catálogo de Menaje y Cristalería en Bogotá",
   description:
@@ -51,7 +53,6 @@ export default function CatalogPage() {
         </p>
 
         {/* BOTÓN VOLVER */}
-
         <div style={{ textAlign: "center", marginBottom: "50px" }}>
           <Link
             href="/"
@@ -70,7 +71,6 @@ export default function CatalogPage() {
         </div>
 
         {/* GRID */}
-
         <div
           style={{
             display: "grid",
@@ -82,7 +82,7 @@ export default function CatalogPage() {
             <Link
               key={product.slug}
               href={`/Galeria/${product.slug}`}
-              className="catalog-card"
+              className={styles.catalogCard}
               style={{
                 background: "#0b1326",
                 borderRadius: "16px",
@@ -94,7 +94,6 @@ export default function CatalogPage() {
               }}
             >
               {/* IMAGEN */}
-
               <div
                 style={{
                   position: "relative",
@@ -109,13 +108,12 @@ export default function CatalogPage() {
                   fill
                   quality={75}
                   sizes="(max-width:768px) 100vw, 400px"
-                  className="catalog-img"
+                  className={styles.catalogImg}
                   style={{ objectFit: "cover" }}
                 />
               </div>
 
               {/* TEXTO */}
-
               <div style={{ padding: "20px" }}>
                 <h3 style={{ marginBottom: "10px" }}>{product.name}</h3>
 
@@ -126,6 +124,41 @@ export default function CatalogPage() {
             </Link>
           ))}
         </div>
+     <div
+  style={{
+    textAlign: "center",
+    marginTop: "70px",
+  }}
+>
+  <p
+    style={{
+      fontSize: "16px",
+      color: "#cbd5f5",
+      marginBottom: "20px",
+    }}
+  >
+    Habla con uno de nuestros asesores y descubre todo nuestro catálogo de menaje premium con presupúestos.
+  </p>
+
+  <a
+    href="https://wa.me/573208836296?text=Hola,%20quiero%20ver%20catalogo%20completo"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      padding: "14px 32px",
+      background: "#25D366",
+      color: "#fff",
+      borderRadius: "10px",
+      textDecoration: "none",
+      fontWeight: "bold",
+      display: "inline-block",
+      boxShadow: "0 4px 20px rgba(37,211,102,0.3)",
+      transition: "all 0.2s ease",
+    }}
+  >
+    Contactar asesor ver catalogo completo
+  </a>
+</div>
       </div>
     </section>
   );
