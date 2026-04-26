@@ -2,19 +2,21 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
 
+  /* 🔥 OPTIMIZACIÓN DE IMÁGENES */
   images: {
     formats: ["image/avif", "image/webp"],
-    qualities: [60, 75], // 🔥 AQUÍ ESTÁ EL FIX
+    qualities: [60, 75],
   },
 
+  /* 🚀 CACHE CORRECTO (ESTO ES CLAVE) */
   async headers() {
     return [
       {
-        source: "/:all*(js|css)",
+        source: "/_next/static/:path*",
         headers: [
           {
             key: "Cache-Control",
-            value: "no-cache",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },

@@ -1,9 +1,8 @@
-import "./globals.css";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import WhatsAppButton from "../components/WhatsAppButton/WhatsAppButton";
 import type { Metadata } from "next";
-
+import "./globals.css";
 export const metadata: Metadata = {
   title: {
     default: "J&L Eventos Premium | Alquiler de Menaje en Bogotá",

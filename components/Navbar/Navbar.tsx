@@ -10,69 +10,51 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  /* OPTIMIZACIÓN SCROLL */
+  /* SCROLL */
   useEffect(() => {
-
     let ticking = false;
 
     const handleScroll = () => {
-
       if (!ticking) {
-
         window.requestAnimationFrame(() => {
-
           setScrolled(window.scrollY > 50);
           ticking = false;
-
         });
-
         ticking = true;
-
       }
-
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
 
   }, []);
 
   /* BLOQUEAR SCROLL */
   useEffect(() => {
-
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
-
   }, [menuOpen]);
 
   return (
-
     <header
       className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}
       role="banner"
     >
-
-      <div className={`container ${styles.navbarContainer}`}>
+      <div className={styles.navbarContainer}>
 
         {/* LOGO */}
-        <Link
-          href="/"
-          className={styles.logo}
-          aria-label="Inicio - J&L Eventos Premium"
-        >
+        <Link href="/" className={styles.logo}>
           <Image
-  src="/logojyl29.png"
-  alt="J&L Eventos Premium"
-  width={120}
-  height={120}
-  priority
-/>
+            src="/logojyl29.png"
+            alt="J&L Eventos Premium"
+            width={120}
+            height={120}
+            priority
+          />
         </Link>
 
         {/* MENU */}
         <nav
           className={`${styles.menu} ${menuOpen ? styles.active : ""}`}
-          aria-label="Menú principal"
         >
 
           <Link href="/" onClick={() => setMenuOpen(false)}>Inicio</Link>
@@ -93,7 +75,6 @@ export default function Navbar() {
             Decoración
           </Link>
 
-          {/* 🔥 NUEVO */}
           <Link href="/catering" onClick={() => setMenuOpen(false)}>
             Catering
           </Link>
@@ -102,7 +83,7 @@ export default function Navbar() {
             Catálogo
           </Link>
 
-          {/* CTA MOVIL */}
+          {/* CTA MOBILE */}
           <a
             href="/alquiler-menaje-bogota#formulario-general"
             className={`${styles.btnCotizar} ${styles.mobileBtn}`}
@@ -125,7 +106,6 @@ export default function Navbar() {
         <button
           className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Abrir menú"
         >
           <span></span>
           <span></span>
@@ -133,7 +113,6 @@ export default function Navbar() {
         </button>
 
       </div>
-
     </header>
   );
 }
