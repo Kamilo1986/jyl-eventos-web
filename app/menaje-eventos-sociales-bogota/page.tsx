@@ -40,7 +40,7 @@ export default function SocialesLanding() {
       {/* HERO */}
       <section className={styles.hero}>
         <Image
-          src="/images/backgrounds/social-bg.jpg"
+          src="/images/backgrounds/social-bg.webp"
           alt="Alquiler de menaje y decoración para eventos sociales en Bogotá"
           fill
           priority

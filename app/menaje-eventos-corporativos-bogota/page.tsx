@@ -40,13 +40,14 @@ export default function CorporativoLanding() {
       {/* HERO */}
       <section className={styles.hero}>
         <Image
-          src="/images/backgrounds/corporativo-bgg.jpg"
-          alt="Alquiler de menaje para eventos corporativos en Bogotá"
-          fill
-          priority
-          sizes="100vw"
-          className={styles.heroImage}
-        />
+        src="/images/backgrounds/corporativo-bgg.jpg"
+        alt="Alquiler de menaje para eventos corporativos en Bogotá"
+        fill
+        priority
+        sizes="100vw"
+        quality={75} // 🔥 clave
+        className={styles.heroImage}
+/>
 
         <div className={styles.overlay} />
 
@@ -82,25 +83,28 @@ export default function CorporativoLanding() {
       <Image
         src="/images/backgrounds/corporativo-bgg.jpg"
         alt="Evento corporativo elegante en Bogotá"
-        width={500}
-        height={350}
+        width={400}
+        height={300}
         quality={60}
+        loading="lazy"
       />
 
       <Image
         src="/images/backgrounds/decoracion-bg.jpg"
         alt="Decoración para eventos empresariales"
-        width={500}
-        height={350}
+        width={400}
+        height={300}
         quality={60}
+        loading="lazy"
       />
 
       <Image
         src="/images/backgrounds/menajee-bg.jpg"
         alt="Menaje premium para eventos corporativos"
-        width={500}
-        height={350}
+        width={400}
+        height={300}
         quality={60}
+        loading="lazy"
       />
 
     </div>

@@ -40,10 +40,10 @@ export default function DecoracionLanding() {
       {/* HERO */}
       <section className={styles.hero}>
         <Image
-          src="/images/backgrounds/decoracion-bg.jpg"
+          src="/images/backgrounds/decoracion-bg.webp"
           alt="Decoración de eventos premium en Bogotá"
           fill
-          quality={60}
+          quality={75}
           priority
           sizes="100vw"
           className={styles.heroImage}

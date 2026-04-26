@@ -61,12 +61,12 @@ export default function Navbar() {
           aria-label="Inicio - J&L Eventos Premium"
         >
           <Image
-            src="/logojyl29.png"
-            alt="J&L Eventos Premium"
-            width={200}
-            height={200}
-            priority
-          />
+  src="/logojyl29.png"
+  alt="J&L Eventos Premium"
+  width={120}
+  height={120}
+  priority
+/>
         </Link>
 
         {/* MENU */}

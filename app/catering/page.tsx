@@ -33,11 +33,11 @@ export default function CateringLanding() {
       <section className={styles.hero}>
 
         <Image
-  src="/images/backgrounds/catering-bg.jpg"
+  src="/images/backgrounds/catering-bg.webp"
   alt="Catering en Bogotá"
   fill
   priority
-  quality={70}
+  quality={75}
   sizes="100vw"
   style={{ objectFit: "cover" }}
 />

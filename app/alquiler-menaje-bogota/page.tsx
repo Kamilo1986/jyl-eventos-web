@@ -41,12 +41,12 @@ export default function MenajeLanding() {
       {/* HERO */}
       <section className={styles.hero}>
         <Image
-          src="/images/backgrounds/menajee-bg.jpg"
+          src="/images/backgrounds/menajee-bg.webp"
           alt="Alquiler de menaje premium en Bogotá para eventos corporativos y sociales"
           fill
           priority
           sizes="100vw"
-          quality={60}
+          quality={75}
           className={styles.heroImage}
         />
 
