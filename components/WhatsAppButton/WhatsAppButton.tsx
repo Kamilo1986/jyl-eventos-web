@@ -28,16 +28,31 @@ export default function WhatsAppButton() {
 
   const url = `https://wa.me/573208836296?text=${encodeURIComponent(message)}`;
 
+  const handleClick = () => {
+
+    /* GOOGLE ADS CONVERSION */
+
+    if (typeof window !== "undefined" && (window as any).gtag) {
+
+      (window as any).gtag("event", "conversion", {
+        send_to: "AW-18121558360/zUuDCIGr4qwCENiShMFD",
+      });
+
+    }
+
+  };
+
   return (
 
     <a
-href={url}
-target="_blank"
-rel="noopener noreferrer"
-className="whatsapp-wrapper"
-aria-label="Abrir WhatsApp para cotizar menaje en Bogotá"
-title="Cotizar por WhatsApp"
->
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whatsapp-wrapper"
+      aria-label="Abrir WhatsApp para cotizar menaje en Bogotá"
+      title="Cotizar por WhatsApp"
+      onClick={handleClick}
+    >
 
       {/* TEXTO DESPLEGABLE */}
 

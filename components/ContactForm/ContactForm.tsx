@@ -69,7 +69,7 @@ export default function ContactForm({ type = "general" }: Props) {
 
         if (typeof window !== "undefined" && (window as any).gtag) {
           (window as any).gtag("event", "conversion", {
-            send_to: "AW-XXXXXXXXX/XXXXXXXX",
+            send_to:"AW-18121558360/uKJ6CM3n4awcENiShMFD",
           });
         }
 

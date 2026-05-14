@@ -4,7 +4,6 @@ import WhatsAppButton from "../components/WhatsAppButton/WhatsAppButton";
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
-
 export const metadata: Metadata = {
   title: {
     default: "J&L Eventos Premium | Alquiler de Menaje en Bogotá",
