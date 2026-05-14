@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
 
   async headers() {
     return [
-
       {
         source: "/_next/static/:path*",
         headers: [
@@ -19,18 +18,6 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-
-      {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "Content-Security-Policy",
-            value:
-              "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;",
-          },
-        ],
-      },
-
     ];
   },
 

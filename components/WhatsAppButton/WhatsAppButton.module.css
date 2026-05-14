@@ -1,154 +1,202 @@
-/* ================================
-   CONTENEDOR
-================================ */
 
-.whatsapp-wrapper{
+/* =========================================
+  CONTENEDOR PRINCIPAL
+========================================= */
 
-position:fixed;
-bottom:22px;
-right:22px;
+.whatsappWrapper {
 
-display:flex;
-align-items:center;
-gap:12px;
+  position: fixed;
 
-z-index:999;
+  right: 6px;
+  bottom: 20px;
 
-text-decoration:none;
+  z-index: 2147483647;
 
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-/* ================================
-   TEXTO DESPLEGABLE
-================================ */
-
-.whatsapp-text{
-
-background:white;
-color:#020617;
-
-padding:10px 14px;
-
-border-radius:10px;
-
-font-size:14px;
-font-weight:600;
-
-white-space:nowrap;
-
-opacity:0;
-transform:translateX(10px);
-
-transition:all .3s ease;
-
-box-shadow:0 10px 25px rgba(0,0,0,.2);
+  text-decoration: none;
 
 }
 
-/* ================================
-   BOTON WHATSAPP
-================================ */
+/* =========================================
+   TEXTO FLOTANTE
+========================================= */
 
-.whatsapp{
+.whatsappText {
 
-width:70px;
-height:70px;
+  position: absolute;
 
-background-color:#25D366;
+  right: 82px;
 
-border-radius:50%;
+  background: #ffffff;
+  color: #0f172a;
 
-display:flex;
-align-items:center;
-justify-content:center;
+  padding: 10px 14px;
 
-box-shadow:
-0 10px 25px rgba(0,0,0,.25);
+  border-radius: 12px;
 
-transition:transform .3s ease, box-shadow .3s ease;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+
+  white-space: nowrap;
+
+  opacity: 0;
+
+  transform: translateX(10px);
+
+  pointer-events: none;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.15);
 
 }
 
-/* ICONO */
+/* =========================================
+   BOTON
+========================================= */
 
-.whatsapp svg{
-width:34px;
-height:34px;
+.whatsapp {
+
+  width: 68px;
+  height: 68px;
+
+  border-radius: 50%;
+
+  background: #25D366;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.22);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+
+  will-change: transform;
+
 }
 
-/* ================================
+/* =========================================
+   ICONO
+========================================= */
+
+.whatsapp svg {
+
+  width: 34px;
+  height: 34px;
+
+  display: block;
+
+}
+
+/* =========================================
    HOVER
-================================ */
+========================================= */
 
-.whatsapp-wrapper:hover .whatsapp-text{
+.whatsappWrapper:hover .whatsappText {
 
-opacity:1;
-transform:translateX(0);
+  opacity: 1;
 
-}
-
-.whatsapp-wrapper:hover .whatsapp{
-
-transform:translateY(-5px) scale(1.05);
-
-box-shadow:
-0 0 25px rgba(37,211,102,.8),
-0 20px 45px rgba(0,0,0,.35);
+  transform: translateX(0);
 
 }
 
-/* ================================
+.whatsappWrapper:hover .whatsapp {
+
+  transform: scale(1.06);
+
+  box-shadow:
+    0 0 24px rgba(37,211,102,.65),
+    0 16px 40px rgba(0,0,0,.28);
+
+}
+
+/* =========================================
    ANIMACION PULSE
-================================ */
+========================================= */
 
-@media (min-width:768px){
+@media (min-width: 768px) {
 
-.whatsapp{
-animation:whatsappPulse 2.2s infinite;
-}
+  .whatsapp {
 
-}
+    animation: whatsappPulse 2.4s infinite;
 
-@keyframes whatsappPulse{
-
-0%{
-box-shadow:
-0 0 0 0 rgba(37,211,102,.6),
-0 10px 25px rgba(0,0,0,.25);
-}
-
-70%{
-box-shadow:
-0 0 0 18px rgba(37,211,102,0),
-0 10px 25px rgba(0,0,0,.25);
-}
-
-100%{
-box-shadow:
-0 0 0 0 rgba(37,211,102,0),
-0 10px 25px rgba(0,0,0,.25);
-}
+  }
 
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
+@keyframes whatsappPulse {
 
-@media(max-width:768px){
+  0% {
 
-.whatsapp-text{
-display:none;
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,.55),
+      0 12px 30px rgba(0,0,0,.22);
+
+  }
+
+  70% {
+
+    box-shadow:
+      0 0 0 18px rgba(37,211,102,0),
+      0 12px 30px rgba(0,0,0,.22);
+
+  }
+
+  100% {
+
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,0),
+      0 12px 30px rgba(0,0,0,.22);
+
+  }
+
 }
 
-.whatsapp{
-width:64px;
-height:64px;
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .whatsappWrapper {
+
+    right: 4px;
+    bottom: 14px;
+
+  }
+
+  .whatsappText {
+
+    display: none;
+
+  }
+
+  .whatsapp {
+
+    width: 60px;
+    height: 60px;
+
+  }
+
+  .whatsapp svg {
+
+    width: 30px;
+    height: 30px;
+
+  }
+
 }
 
-.whatsapp svg{
-width:30px;
-height:30px;
-}
-
-}

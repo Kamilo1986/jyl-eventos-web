@@ -46,4 +46,20 @@ body {
   /* 🔥 mejora renderizado */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.mainContent {
+
+  margin-top: 90px;
+
+  position: relative;
+
+  z-index: 1;
+
+}
+
+
 }
