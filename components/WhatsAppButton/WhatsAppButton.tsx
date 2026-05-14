@@ -1,38 +1,10 @@
 "use client";
 
-import { useMemo } from "react";
-import { usePathname } from "next/navigation";
-import "./WhatsAppButton.css";
+import "./WhatsAppButton.module.css";
 
 export default function WhatsAppButton() {
 
-  const pathname = usePathname();
-
-  const message = useMemo(() => {
-
-    if (pathname?.includes("corporativos")) {
-      return "Hola, quiero cotizar menaje para un evento corporativo en Bogotá.";
-    }
-
-    if (pathname?.includes("sociales")) {
-      return "Hola, quiero cotizar menaje para un evento social en Bogotá.";
-    }
-
-    if (pathname?.includes("alquiler-menaje-bogota")) {
-      return "Hola, quiero cotizar alquiler de menaje completo en Bogotá.";
-    }
-
-    return "Hola, quiero cotizar alquiler de menaje en Bogotá.";
-
-  }, [pathname]);
-
-  const url = `https://wa.me/573208836296?text=${encodeURIComponent(message)}`;
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-
-    e.preventDefault();
-
-    /* GOOGLE ADS CONVERSION */
+  const handleClick = () => {
 
     if (typeof window !== "undefined" && (window as any).gtag) {
 
@@ -42,36 +14,25 @@ export default function WhatsAppButton() {
 
     }
 
-    /* ABRIR WHATSAPP */
-
-    setTimeout(() => {
-      window.open(url, "_blank");
-    }, 300);
-
   };
 
   return (
 
     <a
-      href={url}
+      href="https://wa.me/573208836296?text=Hola%2C%20quiero%20cotizar%20alquiler%20de%20menaje%20en%20Bogotá."
+      target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-wrapper"
-      aria-label="Abrir WhatsApp para cotizar menaje en Bogotá"
+      aria-label="Abrir WhatsApp"
       title="Cotizar por WhatsApp"
       onClick={handleClick}
     >
-
-      {/* TEXTO DESPLEGABLE */}
 
       <span className="whatsapp-text">
         Cotiza por WhatsApp
       </span>
 
-      {/* BOTÓN */}
-
       <div className="whatsapp">
-
-        {/* LOGO WHATSAPP OFICIAL */}
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -88,5 +49,6 @@ export default function WhatsAppButton() {
       </div>
 
     </a>
+
   );
 }
