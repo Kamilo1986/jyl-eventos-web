@@ -2,7 +2,9 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import WhatsAppButton from "../components/WhatsAppButton/WhatsAppButton";
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
+
 export const metadata: Metadata = {
   title: {
     default: "J&L Eventos Premium | Alquiler de Menaje en Bogotá",
@@ -43,6 +45,22 @@ export default function RootLayout({
         <Footer />
 
         <WhatsAppButton />
+
+        {/* Google Ads Tag */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18121558360"
+        />
+
+        <Script id="google-ads">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18121558360');
+          `}
+        </Script>
 
       </body>
     </html>

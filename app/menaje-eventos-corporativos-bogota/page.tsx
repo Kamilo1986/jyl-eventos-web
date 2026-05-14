@@ -90,7 +90,7 @@ export default function CorporativoLanding() {
       />
 
       <Image
-        src="/images/backgrounds/decoracion-bg.jpg"
+        src="/images/backgrounds/decoracion-bg.webp"
         alt="Decoración para eventos empresariales"
         width={400}
         height={300}
@@ -99,7 +99,7 @@ export default function CorporativoLanding() {
       />
 
       <Image
-        src="/images/backgrounds/menajee-bg.jpg"
+        src="/images/backgrounds/menajee-bg.webp"
         alt="Menaje premium para eventos corporativos"
         width={400}
         height={300}
