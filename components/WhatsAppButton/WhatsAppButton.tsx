@@ -34,7 +34,7 @@ export default function WhatsAppButton() {
 
     if (typeof window !== "undefined" && (window as any).gtag) {
 
-      (window as any).gtag("event", "conversion", {
+      (window as any).gtag("event", "conversion whatsapp", {
         send_to: "AW-18121558360/zUuDCIGr4qwCENiShMFD",
       });
 
