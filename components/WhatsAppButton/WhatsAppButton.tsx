@@ -28,17 +28,25 @@ export default function WhatsAppButton() {
 
   const url = `https://wa.me/573208836296?text=${encodeURIComponent(message)}`;
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+
+    e.preventDefault();
 
     /* GOOGLE ADS CONVERSION */
 
     if (typeof window !== "undefined" && (window as any).gtag) {
 
-      (window as any).gtag("event", "conversion whatsapp", {
+      (window as any).gtag("event", "conversion", {
         send_to: "AW-18121558360/zUuDCIGr4qwCENiShMFD",
       });
 
     }
+
+    /* ABRIR WHATSAPP */
+
+    setTimeout(() => {
+      window.open(url, "_blank");
+    }, 300);
 
   };
 
@@ -46,7 +54,6 @@ export default function WhatsAppButton() {
 
     <a
       href={url}
-      target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-wrapper"
       aria-label="Abrir WhatsApp para cotizar menaje en Bogotá"
