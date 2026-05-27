@@ -82,7 +82,7 @@ export default function SocialesLanding() {
           <div className={styles.visualImages}>
 
             <Image
-              src="/images/disponible2/1.jpg"
+              src="/images/backgrounds/social-bg.webp"
               alt="Decoración elegante para eventos sociales en Bogotá"
               width={400}
               height={300}
@@ -90,7 +90,7 @@ export default function SocialesLanding() {
             />
 
             <Image
-              src="/images/disponible2/2.jpg"
+              src="/images/catalog/mesass.jpg"
               alt="Montaje de mesa premium para celebraciones"
               width={400}
               height={300}
@@ -98,7 +98,7 @@ export default function SocialesLanding() {
             />
 
             <Image
-              src="/images/disponible2/3.jpg"
+              src="/images/catalog/decoracion.jpg"
               alt="Menaje sofisticado para eventos sociales"
               width={400}
               height={300}
