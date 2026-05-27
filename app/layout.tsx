@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import WhatsAppButtonClient from "../components/WhatsAppButton/WhatsAppButtonClient";
+import WhatsAppButton from "../components/WhatsAppButton/WhatsAppButton";
 
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -59,7 +59,7 @@ export default function RootLayout({
         <Footer />
 
         {/* BOTON WHATSAPP */}
-        <WhatsAppButtonClient />
+        <WhatsAppButton />
 
         {/* GOOGLE TAG */}
         <Script
