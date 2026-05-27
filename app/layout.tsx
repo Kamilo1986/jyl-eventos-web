@@ -1,3 +1,4 @@
+import "./globals.css";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import WhatsAppButton from "../components/WhatsAppButton/WhatsAppButton";
@@ -5,7 +6,7 @@ import WhatsAppButton from "../components/WhatsAppButton/WhatsAppButton";
 import type { Metadata } from "next";
 import Script from "next/script";
 
-import "./globals.css";
+
 
 export const metadata: Metadata = {
   title: {
@@ -61,17 +62,21 @@ export default function RootLayout({
         {/* BOTON WHATSAPP */}
         <WhatsAppButton />
 
-        {/* GOOGLE TAG */}
+        {/* GOOGLE ADS */}
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-52Q6FM9X15"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18121558360"
+          strategy="afterInteractive"
         />
 
-        <Script id="google-tag">
+        <Script
+          id="google-ads"
+          strategy="afterInteractive"
+        >
           {`
             window.dataLayer = window.dataLayer || [];
 
-            function gtag() {
+            function gtag(){
               dataLayer.push(arguments);
             }
 
@@ -79,10 +84,6 @@ export default function RootLayout({
 
             gtag('js', new Date());
 
-            // GOOGLE ANALYTICS
-            gtag('config', 'G-52Q6FM9X15');
-
-            // GOOGLE ADS
             gtag('config', 'AW-18121558360');
           `}
         </Script>
