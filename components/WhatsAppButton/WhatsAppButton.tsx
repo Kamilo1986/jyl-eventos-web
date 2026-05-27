@@ -4,42 +4,62 @@ import styles from "./WhatsAppButton.module.css";
 
 export default function WhatsAppButton() {
 
-const handleClick = () => {
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>
+  ) => {
 
-  console.log("CLICK WHATSAPP");
+    e.preventDefault();
 
-  if (
-    typeof window !== "undefined" &&
-    (window as any).gtag
-  ) {
+    const whatsappUrl =
+      "https://wa.me/573208836296?text=Hola%2C%20quiero%20cotizar%20alquiler%20de%20menaje%20en%20Bogotá.";
 
-    console.log("GTAG EXISTE");
+    if (
+      typeof window !== "undefined" &&
+      (window as any).gtag
+    ) {
 
-    (window as any).gtag(
-      "event",
-      "conversion",
-      {
-        send_to:
-          "AW-18121558360/zUuDCIGr4qwCENiShMFD",
-          value: 1.0,
-          currency: "COP",
-      }
-    );
+      (window as any).gtag(
+        "event",
+        "conversion",
+        {
+          send_to:
+            "AW-18121558360/zUuDCIGr4qwCENiShMFD",
 
-    console.log("CONVERSION ENVIADA");
+          event_callback: () => {
 
-  } else {
+            window.open(
+              whatsappUrl,
+              "_blank"
+            );
 
-    console.log("GTAG NO EXISTE");
+          },
+        }
+      );
 
-  }
+      setTimeout(() => {
 
-};
+        window.open(
+          whatsappUrl,
+          "_blank"
+        );
+
+      }, 1200);
+
+    } else {
+
+      window.open(
+        whatsappUrl,
+        "_blank"
+      );
+
+    }
+
+  };
 
   return (
 
     <a
-      href="https://wa.me/573208836296?text=Hola%2C%20quiero%20cotizar%20alquiler%20de%20menaje%20en%20Bogotá."
+      href="https://wa.me/573208836296"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp J&L Eventos Premium"
