@@ -4,25 +4,37 @@ import styles from "./WhatsAppButton.module.css";
 
 export default function WhatsAppButton() {
 
-  const handleClick = () => {
+const handleClick = () => {
 
-    if (
-      typeof window !== "undefined" &&
-      (window as any).gtag
-    ) {
+  console.log("CLICK WHATSAPP");
 
-      (window as any).gtag(
-        "event",
-        "conversion",
-        {
-          send_to:
-            "AW-18121558360/zUuDCIGr4qwCENiShMFD",
-        }
-      );
+  if (
+    typeof window !== "undefined" &&
+    (window as any).gtag
+  ) {
 
-    }
+    console.log("GTAG EXISTE");
 
-  };
+    (window as any).gtag(
+      "event",
+      "conversion",
+      {
+        send_to:
+          "AW-18121558360/zUuDCIGr4qwCENiShMFD",
+          value: 1.0,
+          currency: "COP",
+      }
+    );
+
+    console.log("CONVERSION ENVIADA");
+
+  } else {
+
+    console.log("GTAG NO EXISTE");
+
+  }
+
+};
 
   return (
 

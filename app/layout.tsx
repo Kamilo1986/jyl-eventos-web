@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import WhatsAppButtonClient from "../components/WhatsAppButton/WhatsAppButtonClient";
@@ -62,13 +61,13 @@ export default function RootLayout({
         {/* BOTON WHATSAPP */}
         <WhatsAppButtonClient />
 
-        {/* GOOGLE ADS */}
+        {/* GOOGLE TAG */}
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18121558360"
+          src="https://www.googletagmanager.com/gtag/js?id=G-52Q6FM9X15"
         />
 
-        <Script id="google-ads">
+        <Script id="google-tag">
           {`
             window.dataLayer = window.dataLayer || [];
 
@@ -76,8 +75,14 @@ export default function RootLayout({
               dataLayer.push(arguments);
             }
 
+            window.gtag = gtag;
+
             gtag('js', new Date());
 
+            // GOOGLE ANALYTICS
+            gtag('config', 'G-52Q6FM9X15');
+
+            // GOOGLE ADS
             gtag('config', 'AW-18121558360');
           `}
         </Script>
@@ -89,4 +94,3 @@ export default function RootLayout({
   );
 
 }
-
