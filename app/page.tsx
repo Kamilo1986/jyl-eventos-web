@@ -1,11 +1,11 @@
 import { Metadata } from "next";
-
 import Link from "next/link";
-
 import Hero from "../components/Hero/Hero";
 import Services from "../components/Services/Services";
 import Catalog from "../components/Catalog/Catalog";
 import ContactForm from "@/components/ContactForm/ContactForm";
+
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
 
@@ -34,7 +34,7 @@ export default function Home() {
 
     name: "J&L Eventos Premium",
 
-    url: "https://tusitio.com",
+    url: "https://jyleventos.com.co",
 
     areaServed: {
 
@@ -64,67 +64,36 @@ export default function Home() {
 
       <Hero />
 
-      {/* BLOQUE SEO PRINCIPAL */}
+      {/* SEO PRINCIPAL */}
 
-      <section
-        style={{
-          padding: "100px 20px",
-          background: "#0f172a",
-          color: "white",
-        }}
-      >
+      <section className={styles.seoSection}>
 
-        <div
-          style={{
-            maxWidth: "1000px",
-            margin: "auto",
-          }}
-        >
+        <div className={styles.seoContainer}>
 
-          <h2
-            style={{
-              marginBottom: "20px",
-              fontSize: "32px",
-              textAlign: "center",
-            }}
-          >
+          <h2 className={styles.seoTitle}>
             Servicio Profesional de Menaje para Eventos en Bogotá
           </h2>
 
-          <p
-            style={{
-              color: "#cbd5e1",
-              lineHeight: "1.8",
-              textAlign: "center",
-            }}
-          >
+          <p className={styles.seoText}>
 
             En <strong>J&L Eventos Premium</strong> ofrecemos{" "}
 
             <Link
               href="/alquiler-menaje-bogota"
-              style={{
-                color: "#38bdf8",
-                textDecoration: "underline",
-                textUnderlineOffset: "3px",
-                fontWeight: "500",
-              }}
+              className={styles.seoLink}
             >
               alquiler de menaje en Bogotá
             </Link>
 
-            , incluyendo copas, vajillas, cristalería, mesas y decoración elegante para eventos corporativos y eventos sociales.
+            , incluyendo copas, vajillas, cristalería,
+            mesas y decoración elegante para eventos
+            corporativos y eventos sociales.
 
             Explora nuestro{" "}
 
             <Link
               href="/catalogo"
-              style={{
-                color: "#38bdf8",
-                textDecoration: "underline",
-                textUnderlineOffset: "3px",
-                fontWeight: "500",
-              }}
+              className={styles.seoLink}
             >
               catálogo completo de productos
             </Link>{" "}
@@ -143,88 +112,48 @@ export default function Home() {
 
       <ContactForm type="general" />
 
-      {/* SEGUNDO BLOQUE SEO */}
+      {/* SEGUNDA SECCION SEO */}
 
-      <section
-        style={{
-          padding: "120px 20px",
-          background:
-            "linear-gradient(180deg,#0b1326,#020617)",
-          color: "white",
-        }}
-      >
+      <section className={styles.infoSection}>
 
-        <div
-          style={{
-            maxWidth: "1000px",
-            margin: "auto",
-          }}
-        >
+        <div className={styles.infoContainer}>
 
-          <h2
-            style={{
-              marginBottom: "25px",
-              fontSize: "30px",
-              textAlign: "center",
-            }}
-          >
+          <h2 className={styles.infoTitle}>
             Servicios Especializados de Alquiler de Menaje y Decoración en Bogotá
           </h2>
 
-          <p
-            style={{
-              color: "#9ca3af",
-              lineHeight: "1.8",
-              marginBottom: "40px",
-              textAlign: "center",
-            }}
-          >
-            En J&L Eventos Premium ofrecemos soluciones completas para eventos corporativos y sociales en Bogotá. Contamos con alquiler de menaje, vajillas, cristalería, copas y decoración elegante para celebraciones de alto nivel.
+          <p className={styles.infoText}>
+
+            En J&L Eventos Premium ofrecemos soluciones completas
+            para eventos corporativos y sociales en Bogotá.
+
+            Contamos con alquiler de menaje, vajillas,
+            cristalería, copas y decoración elegante
+            para celebraciones de alto nivel.
+
           </p>
 
-          {/* ENLACES INTERNOS */}
+          {/* LINKS INTERNOS */}
 
-          <div
-            style={{
-              display: "grid",
-              gap: "14px",
-              marginBottom: "50px",
-              textAlign: "center",
-            }}
-          >
+          <div className={styles.infoLinks}>
 
             <Link
               href="/alquiler-menaje-bogota"
-              style={{
-                color: "#38bdf8",
-                textDecoration: "underline",
-                textUnderlineOffset: "3px",
-                fontWeight: "500",
-              }}
+              className={styles.infoLink}
             >
               ➜ Alquiler de menaje completo para eventos en Bogotá
             </Link>
 
             <Link
               href="/catalogo"
-              style={{
-                color: "#38bdf8",
-                textDecoration: "underline",
-                textUnderlineOffset: "3px",
-                fontWeight: "500",
-              }}
+              className={styles.infoLink}
             >
               ➜ Catálogo de copas, vajillas y cristalería premium
             </Link>
 
             <Link
               href="/decoracion-eventos-bogota"
-              style={{
-                color: "#38bdf8",
-                textDecoration: "underline",
-                textUnderlineOffset: "3px",
-                fontWeight: "500",
-              }}
+              className={styles.infoLink}
             >
               ➜ Decoración profesional de eventos en Bogotá
             </Link>
@@ -233,26 +162,21 @@ export default function Home() {
 
           {/* COBERTURA */}
 
-          <h3
-            style={{
-              marginBottom: "20px",
-              fontSize: "22px",
-              textAlign: "center",
-            }}
-          >
+          <h3 className={styles.infoSubtitle}>
             Cobertura en Bogotá y zonas estratégicas
           </h3>
 
-          <p
-            style={{
-              color: "#9ca3af",
-              lineHeight: "1.8",
-              textAlign: "center",
-            }}
-          >
-            Atendemos eventos en Chapinero, Usaquén, Zona T, Chicó Norte, Zona Norte, Salitre, Centro y municipios cercanos.
+          <p className={styles.infoText}>
 
-            Somos especialistas en alquiler de menaje premium y decoración para eventos elegantes en Bogotá.
+            Atendemos eventos en Chapinero,
+            Usaquén, Zona T, Chicó Norte,
+            Zona Norte, Salitre, Centro
+            y municipios cercanos.
+
+            Somos especialistas en alquiler
+            de menaje premium y decoración
+            para eventos elegantes en Bogotá.
+
           </p>
 
         </div>

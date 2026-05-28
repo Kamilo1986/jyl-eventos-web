@@ -1,0 +1,233 @@
+/* =========================
+   HOME SEO SECTION
+========================= */
+
+.seoSection {
+
+  padding: 100px 20px;
+
+  background: #0f172a;
+
+  color: white;
+
+}
+
+.seoContainer {
+
+  max-width: 1000px;
+
+  margin: auto;
+
+}
+
+/* TITULO */
+
+.seoTitle {
+
+  margin-bottom: 20px;
+
+  font-size: 32px;
+
+  text-align: center;
+
+  line-height: 1.2;
+
+}
+
+/* TEXTO */
+
+.seoText {
+
+  color: #cbd5e1;
+
+  line-height: 1.8;
+
+  text-align: center;
+
+  font-size: 17px;
+
+}
+
+/* LINKS */
+
+.seoLink {
+
+  color: #38bdf8;
+
+  text-decoration: underline;
+
+  text-underline-offset: 4px;
+
+  transition: opacity .2s ease;
+
+}
+
+.seoLink:hover {
+
+  opacity: .9;
+
+}
+
+/* =========================
+   SEGUNDA SECCION SEO
+========================= */
+
+.infoSection {
+
+  padding: 120px 20px;
+
+  background: linear-gradient(
+    180deg,
+    #0b1326,
+    #020617
+  );
+
+  color: white;
+
+}
+
+.infoContainer {
+
+  max-width: 1000px;
+
+  margin: auto;
+
+}
+
+/* TITULO */
+
+.infoTitle {
+
+  margin-bottom: 25px;
+
+  font-size: 30px;
+
+  text-align: center;
+
+  line-height: 1.2;
+
+}
+
+/* TEXTO */
+
+.infoText {
+
+  color: #9ca3af;
+
+  line-height: 1.8;
+
+  margin-bottom: 40px;
+
+  text-align: center;
+
+  font-size: 16px;
+
+}
+
+/* GRID LINKS */
+
+.infoLinks {
+
+  display: grid;
+
+  gap: 16px;
+
+  margin-bottom: 50px;
+
+  text-align: center;
+
+}
+
+/* LINKS INTERNOS */
+
+.infoLink {
+
+  color: #38bdf8;
+
+  text-decoration: underline;
+
+  text-underline-offset: 4px;
+
+  font-weight: 500;
+
+  min-height: 44px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition: opacity .2s ease;
+
+}
+
+.infoLink:hover {
+
+  opacity: .9;
+
+}
+
+/* SUBTITLE */
+
+.infoSubtitle {
+
+  margin-bottom: 20px;
+
+  font-size: 22px;
+
+  text-align: center;
+
+  line-height: 1.3;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .seoSection {
+
+    padding: 80px 20px;
+
+  }
+
+  .seoTitle {
+
+    font-size: 28px;
+
+  }
+
+  .seoText {
+
+    font-size: 15px;
+
+  }
+
+  .infoSection {
+
+    padding: 90px 20px;
+
+  }
+
+  .infoTitle {
+
+    font-size: 26px;
+
+  }
+
+  .infoSubtitle {
+
+    font-size: 20px;
+
+  }
+
+  .infoText {
+
+    font-size: 15px;
+
+  }
+
+}
