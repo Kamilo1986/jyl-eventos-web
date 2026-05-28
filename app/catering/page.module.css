@@ -19,12 +19,13 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(2, 6, 23, 0.95) 0%,
-    rgba(2, 6, 23, 0.85) 40%,
-    rgba(2, 6, 23, 0.75) 100%
-  );
+ background:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 23, 0.45) 0%,
+      rgba(2, 6, 23, 0.25) 50%,
+      rgba(2, 6, 23, 0.60) 100%
+    );
 }
 
 .heroContent {
