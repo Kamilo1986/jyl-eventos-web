@@ -4,11 +4,7 @@ import styles from "./WhatsAppButton.module.css";
 
 export default function WhatsAppButton() {
 
-  const handleClick = (
-    e: React.MouseEvent<HTMLAnchorElement>
-  ) => {
-
-    e.preventDefault();
+  const handleClick = () => {
 
     const whatsappUrl =
       "https://wa.me/573208836296?text=Hola%2C%20quiero%20cotizar%20alquiler%20de%20menaje%20en%20Bogotá.";
@@ -24,32 +20,7 @@ export default function WhatsAppButton() {
         {
           send_to:
             "AW-18121558360/zUuDCIGr4qwCENiShMFD",
-
-          event_callback: () => {
-
-            window.open(
-              whatsappUrl,
-              "_blank"
-            );
-
-          },
         }
-      );
-
-      setTimeout(() => {
-
-        window.open(
-          whatsappUrl,
-          "_blank"
-        );
-
-      }, 1200);
-
-    } else {
-
-      window.open(
-        whatsappUrl,
-        "_blank"
       );
 
     }
@@ -59,7 +30,7 @@ export default function WhatsAppButton() {
   return (
 
     <a
-      href="https://wa.me/573208836296"
+      href="https://wa.me/573208836296?text=Hola%2C%20quiero%20cotizar%20alquiler%20de%20menaje%20en%20Bogotá."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp J&L Eventos Premium"

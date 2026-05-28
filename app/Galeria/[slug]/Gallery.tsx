@@ -5,17 +5,18 @@ import Link from "next/link";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 
-// 🔥 SOLO el componente se carga dinámico
-const Lightbox = dynamic(
-  () => import("yet-another-react-lightbox"),
-  { ssr: false }
-);
-
-// ✅ el plugin se importa normal (NO dynamic)
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
-import "yet-another-react-lightbox/styles.css";
 import "./galeria.css";
+
+const Lightbox = dynamic(
+  () => import("yet-another-react-lightbox"),
+  {
+    ssr: false,
+  }
+);
+
+const plugins = [Zoom];
 
 type ImageType = {
   src: string;
@@ -26,7 +27,10 @@ type Props = {
   productName: string;
 };
 
-export default function Gallery({ images, productName }: Props) {
+export default function Gallery({
+  images,
+  productName,
+}: Props) {
 
   const [index, setIndex] = useState(-1);
 
@@ -39,10 +43,18 @@ export default function Gallery({ images, productName }: Props) {
         <nav className="galeria-breadcrumb">
 
           <Link href="/">Inicio</Link>
+
           <span>/</span>
-          <Link href="/catalogo">Catálogo</Link>
+
+          <Link href="/catalogo">
+            Catálogo
+          </Link>
+
           <span>/</span>
-          <span className="actual">{productName}</span>
+
+          <span className="actual">
+            {productName}
+          </span>
 
         </nav>
 
@@ -51,48 +63,59 @@ export default function Gallery({ images, productName }: Props) {
         </h1>
 
         <p className="galeria-description">
-          Colección exclusiva de {productName} para eventos premium en Bogotá.
+          Colección exclusiva de {productName}
+          para eventos premium en Bogotá.
         </p>
 
         <div className="volver-catalogo">
+
           <Link href="/catalogo">
             ← volver al catálogo
           </Link>
+
         </div>
 
         <div className="galeria-grid">
 
           {images.map((img, i) => (
 
-            <div
+            <button
               key={i}
               className="galeria-card"
               onClick={() => setIndex(i)}
+              aria-label={`Abrir imagen ${i + 1}`}
             >
 
               <Image
                 src={img.src}
                 alt={`${productName} para eventos en Bogotá - J&L Eventos Premium`}
-                fill
+                width={700}
+                height={700}
                 sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
                 className="galeria-img"
-                priority={i === 0}
-                quality={60}
+                quality={45}
+                loading="lazy"
               />
 
-            </div>
+            </button>
 
           ))}
 
         </div>
 
-        <Lightbox
-          open={index >= 0}
-          close={() => setIndex(-1)}
-          slides={images.map(img => ({ src: img.src }))}
-          index={index}
-          plugins={[Zoom]}
-        />
+        {index >= 0 && (
+
+          <Lightbox
+            open={true}
+            close={() => setIndex(-1)}
+            slides={images.map(img => ({
+              src: img.src
+            }))}
+            index={index}
+            plugins={plugins}
+          />
+
+        )}
 
       </div>
 

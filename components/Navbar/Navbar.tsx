@@ -3,87 +3,119 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
 
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  /* SCROLL */
-  useEffect(() => {
-    let ticking = false;
+  /* BLOQUEAR SCROLL SOLO EN MENU MOBILE */
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setScrolled(window.scrollY > 50);
-          ticking = false;
-        });
-        ticking = true;
-      }
+  useEffect(() => {
+
+    if (menuOpen) {
+
+      document.documentElement.style.overflow = "hidden";
+
+    } else {
+
+      document.documentElement.style.overflow = "";
+
+    }
+
+    return () => {
+
+      document.documentElement.style.overflow = "";
+
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-
-  }, []);
-
-  /* BLOQUEAR SCROLL */
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
 
   return (
+
     <header
-      className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}
+      className={styles.navbar}
       role="banner"
     >
+
       <div className={styles.navbarContainer}>
 
         {/* LOGO */}
-        <Link href="/" className={styles.logo}>
+
+        <Link
+          href="/"
+          className={styles.logo}
+          aria-label="Ir al inicio"
+        >
+
           <Image
             src="/logojyl29.png"
             alt="J&L Eventos Premium"
             width={120}
             height={120}
-            priority
           />
+
         </Link>
 
         {/* MENU */}
+
         <nav
           className={`${styles.menu} ${menuOpen ? styles.active : ""}`}
+          aria-label="Menú principal"
         >
 
-          <Link href="/" onClick={() => setMenuOpen(false)}>Inicio</Link>
+          <Link
+            href="/"
+            onClick={() => setMenuOpen(false)}
+          >
+            Inicio
+          </Link>
 
-          <Link href="/alquiler-menaje-bogota" onClick={() => setMenuOpen(false)}>
+          <Link
+            href="/alquiler-menaje-bogota"
+            onClick={() => setMenuOpen(false)}
+          >
             Menaje
           </Link>
 
-          <Link href="/menaje-eventos-corporativos-bogota" onClick={() => setMenuOpen(false)}>
+          <Link
+            href="/menaje-eventos-corporativos-bogota"
+            onClick={() => setMenuOpen(false)}
+          >
             Corporativos
           </Link>
 
-          <Link href="/menaje-eventos-sociales-bogota" onClick={() => setMenuOpen(false)}>
+          <Link
+            href="/menaje-eventos-sociales-bogota"
+            onClick={() => setMenuOpen(false)}
+          >
             Sociales
           </Link>
 
-          <Link href="/decoracion-eventos-bogota" onClick={() => setMenuOpen(false)}>
+          <Link
+            href="/decoracion-eventos-bogota"
+            onClick={() => setMenuOpen(false)}
+          >
             Decoración
           </Link>
 
-          <Link href="/catering" onClick={() => setMenuOpen(false)}>
+          <Link
+            href="/catering"
+            onClick={() => setMenuOpen(false)}
+          >
             Catering
           </Link>
 
-          <Link href="/catalogo" onClick={() => setMenuOpen(false)}>
+          <Link
+            href="/catalogo"
+            onClick={() => setMenuOpen(false)}
+          >
             Catálogo
           </Link>
 
           {/* CTA MOBILE */}
+
           <a
             href="/alquiler-menaje-bogota#formulario-general"
             className={`${styles.btnCotizar} ${styles.mobileBtn}`}
@@ -95,6 +127,7 @@ export default function Navbar() {
         </nav>
 
         {/* CTA DESKTOP */}
+
         <a
           href="/alquiler-menaje-bogota#formulario-general"
           className={`${styles.btnCotizar} ${styles.desktopBtn}`}
@@ -102,17 +135,25 @@ export default function Navbar() {
           Cotiza Ahora
         </a>
 
-        {/* HAMBURGUESA */}
+        {/* BOTON HAMBURGUESA */}
+
         <button
           className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Abrir menú"
+          aria-expanded={menuOpen}
         >
+
           <span></span>
           <span></span>
           <span></span>
+
         </button>
 
       </div>
+
     </header>
+
   );
+
 }

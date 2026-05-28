@@ -1,4 +1,5 @@
 import "./globals.css";
+
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import WhatsAppButton from "../components/WhatsAppButton/WhatsAppButton";
@@ -6,9 +7,8 @@ import WhatsAppButton from "../components/WhatsAppButton/WhatsAppButton";
 import type { Metadata } from "next";
 import Script from "next/script";
 
-
-
 export const metadata: Metadata = {
+
   title: {
     default: "J&L Eventos Premium | Alquiler de Menaje en Bogotá",
     template: "%s | J&L Eventos Premium",
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
+
     title: "J&L Eventos Premium",
 
     description:
@@ -36,7 +37,9 @@ export const metadata: Metadata = {
     locale: "es_CO",
 
     type: "website",
+
   },
+
 };
 
 export default function RootLayout({
@@ -47,24 +50,64 @@ export default function RootLayout({
 
   return (
 
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es" data-scroll-behavior="smooth">
 
-      <body>
+      <head>
+
+        {/* PRECONNECT GOOGLE TAG MANAGER */}
+
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+        />
+
+        <link
+          rel="dns-prefetch"
+          href="https://www.googletagmanager.com"
+        />
+
+        {/* VIEWPORT */}
+
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+
+        {/* THEME COLOR */}
+
+        <meta
+          name="theme-color"
+          content="#020617"
+        />
+
+      </head>
+
+      <body suppressHydrationWarning>
+
+        {/* NAVBAR */}
 
         <Navbar />
 
-        <main className="mainContent">
+        {/* CONTENIDO PRINCIPAL */}
+
+        <main
+          className="mainContent"
+          id="main-content"
+        >
           {children}
         </main>
+
+        {/* FOOTER */}
 
         <Footer />
 
         {/* BOTON WHATSAPP */}
+
         <WhatsAppButton />
 
         {/* GOOGLE ADS */}
+
         <Script
-          async
           src="https://www.googletagmanager.com/gtag/js?id=AW-18121558360"
           strategy="afterInteractive"
         />
@@ -74,9 +117,10 @@ export default function RootLayout({
           strategy="afterInteractive"
         >
           {`
+
             window.dataLayer = window.dataLayer || [];
 
-            function gtag(){
+            function gtag() {
               dataLayer.push(arguments);
             }
 
@@ -85,6 +129,7 @@ export default function RootLayout({
             gtag('js', new Date());
 
             gtag('config', 'AW-18121558360');
+
           `}
         </Script>
 
