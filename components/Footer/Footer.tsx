@@ -32,7 +32,7 @@ export default function Footer() {
           <h4>Contacto</h4>
           <p>Direccion: Carrera 57b # 75-19 Bogotá, Colombia</p>
           <p>Telefono: +57 320 883 6296</p>
-          <p>Email: jylcateringeventos@gmail.com</p>
+          <p>Email: contacto@jyleventos.com.co</p>
 
           {/* REDES */}
           <div className="footer-socials">
