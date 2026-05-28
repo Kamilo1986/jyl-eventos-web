@@ -56,6 +56,8 @@
 
   justify-self: start;
 
+  flex-shrink: 0;
+
 }
 
 .logo img {
@@ -63,8 +65,6 @@
   width: 150px;
 
   height: auto;
-
-  filter: none;
 
   transition: opacity 0.2s ease;
 
@@ -110,6 +110,16 @@
 
   position: relative;
 
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 4px 0;
+
   transition:
     color 0.25s ease,
     opacity 0.25s ease;
@@ -142,6 +152,8 @@
 
 }
 
+/* HOVER */
+
 .menu a:hover {
 
   color: white;
@@ -159,6 +171,14 @@
 ================================ */
 
 .btnCotizar {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 48px;
 
   padding: 10px 24px;
 
@@ -194,17 +214,25 @@
 
 }
 
+/* BOTON DESKTOP */
+
 .desktopBtn {
 
-  display: inline-block;
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
 
   justify-self: end;
 
 }
 
+/* BOTON MOBILE */
+
 .mobileBtn {
 
-  display: none;
+  display: none !important;
 
   margin-top: 20px;
 
@@ -220,6 +248,10 @@
 
   flex-direction: column;
 
+  justify-content: center;
+
+  align-items: center;
+
   gap: 5px;
 
   cursor: pointer;
@@ -227,6 +259,10 @@
   background: none;
 
   border: none;
+
+  min-width: 44px;
+
+  min-height: 44px;
 
 }
 
@@ -274,6 +310,8 @@
 
     justify-content: space-between;
 
+    align-items: center;
+
     padding: 0 20px;
 
   }
@@ -300,11 +338,15 @@
 
     justify-content: center;
 
+    align-items: center;
+
     gap: 30px;
 
     padding: 40px 20px;
 
     transition: transform 0.3s ease;
+
+    z-index: 2000;
 
   }
 
@@ -324,13 +366,21 @@
 
   .mobileBtn {
 
-    display: inline-block;
+    display: flex !important;
+
+    width: 100%;
+
+    justify-content: center;
 
   }
 
   .hamburger {
 
     display: flex;
+
+    position: relative;
+
+    z-index: 2001;
 
   }
 
