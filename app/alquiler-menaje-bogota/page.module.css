@@ -1,209 +1,338 @@
 /* =========================
-  HERO
+   HERO
 ========================= */
 
 .hero {
+
   position: relative;
+
   min-height: 85vh;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   padding: 0 20px;
+
   color: white;
+
   overflow: hidden;
+
   text-align: center;
+
 }
+
+/* =========================
+   HERO IMAGE
+========================= */
 
 .heroImage {
+
   object-fit: cover;
+
   z-index: 0;
-  transform: scale(1.05);
+
 }
+
+/* =========================
+   OVERLAY
+========================= */
 
 .overlay {
+
   position: absolute;
+
   inset: 0;
+
   background: linear-gradient(
     180deg,
-    rgba(2, 6, 23, 0.95) 0%,
-    rgba(2, 6, 23, 0.85) 40%,
-    rgba(2, 6, 23, 0.75) 100%
+    rgba(2, 6, 23, 0.92) 0%,
+    rgba(2, 6, 23, 0.82) 40%,
+    rgba(2, 6, 23, 0.72) 100%
   );
+
   z-index: 1;
+
 }
 
+/* =========================
+   HERO CONTENT
+========================= */
+
 .heroContent {
+
   position: relative;
+
   z-index: 2;
+
   max-width: 900px;
-  animation: fadeUp 1s ease forwards;
+
 }
 
 .heroContent h1 {
+
   font-size: 42px;
+
   margin-bottom: 25px;
+
   letter-spacing: 1px;
+
+  line-height: 1.2;
+
 }
 
 .heroContent p {
+
   color: #cbd5e1;
+
   line-height: 1.8;
+
   margin-bottom: 50px;
+
+  font-size: 18px;
+
 }
 
 /* =========================
-   BOTÓN
+   BOTÓN CTA
 ========================= */
 
 .cta {
+
   display: inline-block;
+
   padding: 18px 36px;
+
   border-radius: 40px;
-  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+
+  background: linear-gradient(
+    90deg,
+    #06b6d4,
+    #3b82f6
+  );
+
   color: white;
+
   font-weight: 700;
+
   text-decoration: none;
+
   font-size: 18px;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,.3);
+
+  transition:
+    opacity 0.3s ease,
+    background 0.3s ease;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+
 }
 
 .cta:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+
+  opacity: 0.92;
+
 }
 
 /* =========================
-   VISUAL SECTION (FIX ESPACIO)
+   VISUAL SECTION
 ========================= */
 
 .visualSection {
-  padding: 60px 20px 30px; /* 🔥 REDUCIDO */
-  background: radial-gradient(circle at top, #020617, #020617 60%);
+
+  padding: 60px 20px 30px;
+
+  background: #020617;
+
 }
 
 .visualContainer {
+
   max-width: 1200px;
+
   margin: auto;
+
   display: grid;
+
   grid-template-columns: 1.2fr 1fr;
+
   gap: 40px;
+
   align-items: center;
+
 }
 
-/* 🔥 GRID PRO (1 GRANDE + 2 PEQUEÑAS) */
+/* =========================
+   GRID IMÁGENES
+========================= */
 
 .visualImages {
+
   display: grid;
+
   grid-template-columns: 2fr 1fr;
+
   grid-template-rows: 220px 220px;
+
   gap: 20px;
+
 }
 
 .visualImages img {
+
   width: 100%;
+
   height: 100%;
-  object-fit: cover; /* 🔥 clave */
+
+  object-fit: cover;
+
   border-radius: 20px;
-  transition: all 0.4s ease;
-  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+
+  transition: opacity 0.3s ease;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+
 }
 
-/* imagen principal grande */
+/* IMAGEN GRANDE */
+
 .visualImages img:nth-child(1) {
+
   grid-row: span 2;
+
 }
 
-/* hover elegante */
+/* HOVER */
+
 .visualImages img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 30px 60px rgba(0,0,0,.6);
+
+  opacity: 0.92;
+
 }
 
-/* TEXTO */
+/* =========================
+   TEXTO VISUAL
+========================= */
 
 .visualText h2 {
+
   font-size: 32px;
+
   margin-bottom: 20px;
-  background: linear-gradient(90deg,#06b6d4,#a855f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+  color: #a855f7;
+
 }
 
 .visualText p {
+
   color: #cbd5e1;
+
   line-height: 1.8;
+
 }
 
 /* =========================
-   CONTENT (FIX ESPACIO)
+   CONTENT
 ========================= */
 
 .content {
+
   background: #020617;
-  padding: 50px 20px 80px; /* 🔥 REDUCIDO ARRIBA */
+
+  padding: 50px 20px 80px;
+
   color: white;
+
 }
 
 .container {
+
   max-width: 1000px;
+
   margin: auto;
+
 }
 
+/* TITULOS */
+
 .content h2 {
+
   font-size: 30px;
+
   margin-bottom: 20px;
+
   position: relative;
+
 }
 
 .content h2::after {
+
   content: "";
+
   display: block;
+
   width: 60px;
+
   height: 3px;
+
   margin-top: 8px;
-  background: linear-gradient(90deg,#06b6d4,#a855f7);
+
+  background: linear-gradient(
+    90deg,
+    #06b6d4,
+    #a855f7
+  );
+
   border-radius: 10px;
+
 }
+
+/* PARRAFOS */
 
 .content p {
+
   color: #9ca3af;
+
   line-height: 1.8;
+
   margin-bottom: 50px;
+
 }
 
+/* LISTA */
+
 .content ul {
+
   margin-bottom: 60px;
+
   line-height: 1.9;
+
   color: #9ca3af;
+
 }
 
 .content li {
+
   margin-bottom: 10px;
+
   position: relative;
+
   padding-left: 20px;
+
 }
 
 .content li::before {
+
   content: "•";
+
   position: absolute;
+
   left: 0;
+
   color: #06b6d4;
-}
 
-/* =========================
-   ANIMACIONES
-========================= */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* =========================
@@ -212,25 +341,68 @@
 
 @media (max-width: 768px) {
 
+  .hero {
+
+    min-height: 75vh;
+
+    padding-top: 120px;
+
+  }
+
   .heroContent h1 {
+
     font-size: 32px;
+
+    line-height: 1.2;
+
+  }
+
+  .heroContent p {
+
+    font-size: 16px;
+
+  }
+
+  .cta {
+
+    width: 100%;
+
+    max-width: 320px;
+
+    padding: 16px 20px;
+
+    font-size: 16px;
+
   }
 
   .visualContainer {
+
     grid-template-columns: 1fr;
+
     gap: 30px;
+
   }
 
   .visualImages {
+
     grid-template-columns: 1fr;
+
     grid-template-rows: auto;
+
   }
 
   .visualImages img:nth-child(1) {
+
     grid-row: auto;
+
   }
 
   .content h2 {
+
     text-align: center;
+
+    font-size: 26px;
+
   }
+
 }
