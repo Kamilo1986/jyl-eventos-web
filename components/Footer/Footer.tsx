@@ -74,7 +74,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:jylcateringeventos@gmail.com"
+              href="mailto:contacto@jyleventos.com.co"
               aria-label="Enviar correo a J&L Eventos Premium"
             >
               <Image src="/images/icons/email.jpg" alt="Email J&L Eventos Premium" width={34} height={34} />
