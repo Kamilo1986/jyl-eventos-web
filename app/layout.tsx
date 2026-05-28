@@ -50,11 +50,11 @@ export default function RootLayout({
 
   return (
 
-    <html lang="es" data-scroll-behavior="smooth">
+    <html lang="es">
 
       <head>
 
-        {/* PRECONNECT GOOGLE TAG MANAGER */}
+        {/* PRECONNECT */}
 
         <link
           rel="preconnect"
@@ -73,7 +73,7 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1"
         />
 
-        {/* THEME COLOR */}
+        {/* THEME */}
 
         <meta
           name="theme-color"
@@ -82,13 +82,13 @@ export default function RootLayout({
 
       </head>
 
-      <body suppressHydrationWarning>
+      <body>
 
         {/* NAVBAR */}
 
         <Navbar />
 
-        {/* CONTENIDO PRINCIPAL */}
+        {/* MAIN */}
 
         <main
           className="mainContent"
@@ -101,7 +101,7 @@ export default function RootLayout({
 
         <Footer />
 
-        {/* BOTON WHATSAPP */}
+        {/* WHATSAPP */}
 
         <WhatsAppButton />
 
@@ -109,18 +109,18 @@ export default function RootLayout({
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18121558360"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         <Script
           id="google-ads"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         >
           {`
 
             window.dataLayer = window.dataLayer || [];
 
-            function gtag() {
+            function gtag(){
               dataLayer.push(arguments);
             }
 
