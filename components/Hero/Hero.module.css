@@ -26,6 +26,8 @@
 
   overflow: hidden;
 
+  contain: layout paint;
+
 }
 
 /* =========================
@@ -181,13 +183,15 @@
 
   line-height: 1.2;
 
-  transition: opacity .2s ease;
+  transition: opacity .15s linear;
+
+  will-change: opacity;
 
 }
 
 .btn-gradient:hover {
 
-  opacity: .92;
+  opacity: .95;
 
 }
 
@@ -220,18 +224,15 @@
 
   line-height: 1.2;
 
-  transition:
-    background .2s ease,
-    color .2s ease,
-    opacity .2s ease;
+  transition: opacity .15s linear;
+
+  will-change: opacity;
 
 }
 
 .btn-outline:hover {
 
-  background: #06b6d4;
-
-  color: white;
+  opacity: .9;
 
 }
 
