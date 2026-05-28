@@ -63,6 +63,7 @@ export default function Navbar() {
         {/* MENU */}
 
         <nav
+          id="menu-principal"
           className={`${styles.menu} ${menuOpen ? styles.active : ""}`}
           aria-label="Menú principal"
         >
@@ -116,23 +117,14 @@ export default function Navbar() {
             Catálogo
           </Link>
 
-          {/* CTA MOBILE */}
-
-          <a
-            href="/alquiler-menaje-bogota#formulario-general"
-            className={`${styles.btnCotizar} ${styles.mobileBtn}`}
-            onClick={() => setMenuOpen(false)}
-          >
-            Cotiza Ahora
-          </a>
-
         </nav>
 
         {/* CTA DESKTOP */}
 
         <a
           href="/alquiler-menaje-bogota#formulario-general"
-          className={`${styles.btnCotizar} ${styles.desktopBtn}`}
+          className={styles.btnCotizar}
+          aria-label="Cotizar alquiler de menaje en Bogotá"
         >
           Cotiza Ahora
         </a>
@@ -142,8 +134,10 @@ export default function Navbar() {
         <button
           className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Abrir menú"
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={menuOpen}
+          aria-controls="menu-principal"
+          type="button"
         >
 
           <span></span>

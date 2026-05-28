@@ -214,7 +214,9 @@
 
 }
 
-/* BOTON DESKTOP */
+/* ================================
+   BOTON DESKTOP
+================================ */
 
 .desktopBtn {
 
@@ -228,13 +230,13 @@
 
 }
 
-/* BOTON MOBILE */
+/* ================================
+   BOTON MOBILE
+================================ */
 
 .mobileBtn {
 
-  display: none !important;
-
-  margin-top: 20px;
+  display: none;
 
 }
 
@@ -366,11 +368,13 @@
 
   .mobileBtn {
 
-    display: flex !important;
+    display: inline-flex;
 
     width: 100%;
 
     justify-content: center;
+
+    margin-top: 12px;
 
   }
 
