@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -10,7 +11,7 @@ export default function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  /* BLOQUEAR SCROLL SOLO EN MENU MOBILE */
+  /* BLOQUEAR SCROLL SOLO EN MOBILE */
 
   useEffect(() => {
 
@@ -54,6 +55,7 @@ export default function Navbar() {
             alt="J&L Eventos Premium"
             width={120}
             height={120}
+            priority
           />
 
         </Link>
@@ -135,7 +137,7 @@ export default function Navbar() {
           Cotiza Ahora
         </a>
 
-        {/* BOTON HAMBURGUESA */}
+        {/* BOTÓN HAMBURGUESA */}
 
         <button
           className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
