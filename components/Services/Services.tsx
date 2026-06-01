@@ -76,7 +76,7 @@ export default function Services() {
   alt={service.title}
   fill
   quality={60}
-  sizes="(max-width:768px) 100vw, 400px"
+  sizes="(max-width:768px) 92vw, (max-width:1200px) 50vw, 320px"
   className="service-img"
 />
               </div>
