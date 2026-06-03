@@ -20,10 +20,10 @@ export default function Footer() {
         <div className="footer-column">
           <h4>Servicios</h4>
           <ul>
-            <li><Link href="/alquiler-menaje-bogota">Alquiler de Menaje</Link></li>
-            <li><Link href="/menaje-eventos-corporativos-bogota">Eventos Corporativos</Link></li>
-            <li><Link href="/menaje-eventos-sociales-bogota">Eventos Sociales</Link></li>
-            <li><Link href="/decoracion-eventos-bogota">Decoración de Eventos</Link></li>
+            <li><Link href="/alquiler-menaje-bogota">Alquiler de Menaje.</Link></li>
+            <li><Link href="/menaje-eventos-corporativos-bogota">Eventos Corporativos.</Link></li>
+            <li><Link href="/menaje-eventos-sociales-bogota">Eventos Sociales.</Link></li>
+            <li><Link href="/decoracion-eventos-bogota">Decoración de Eventos.</Link></li>
           </ul>
         </div>
 
