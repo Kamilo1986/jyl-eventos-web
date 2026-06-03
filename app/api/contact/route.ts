@@ -28,6 +28,7 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: `"Formulario Web" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
+      replyTo: String(email),
       subject: "Nueva cotización desde la web",
       text: `
 Nombre: ${nombre}
