@@ -39,7 +39,7 @@ export default function WhatsAppButton() {
         "conversion",
         {
           send_to:
-            "AW-18121558360/zUuDCIGr4qwCENiShMFD",
+                  "AW-18121558360/KV6mCL-e8cccENiShMFD",
 
           event_callback: openWhatsApp,
         }
