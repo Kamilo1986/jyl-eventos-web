@@ -109,12 +109,12 @@ export default function RootLayout({
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18121558360"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
 
         <Script
           id="google-ads"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         >
           {`
 
